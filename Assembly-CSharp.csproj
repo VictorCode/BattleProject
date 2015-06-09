@@ -109,6 +109,8 @@
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
+     <Compile Include="Assets\Scripts\ItemGun.cs" />
+     <Compile Include="Assets\Scripts\ItemWeapon.cs" />
      <Compile Include="Assets\Scripts\MainWeapon.cs" />
      <Compile Include="Assets\Scripts\MainWeaponGun.cs" />
      <Compile Include="Assets\Scripts\Poof.cs" />

@@ -54,7 +54,6 @@ public class MainWeapon : MonoBehaviour
 		{
 			enemyDetect = false;
 		}
-		
 	}
 	
 	void OnGUI()

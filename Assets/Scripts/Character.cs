@@ -58,6 +58,7 @@ public class Character : MonoBehaviour
 		lhSoundPlayed = false;
 		hDangerThreshold = (int) (healthMax * .2);
 		inventory = new Inventory(itemMax);
+		// need to make it first...Instantiate(hud);
 	}
 	
 	//must be used in each character's Update function to work
@@ -311,5 +312,4 @@ public class Character : MonoBehaviour
 		this.powerRegenSpeed = prs;
 		return prsold;
 	}
-	
 }

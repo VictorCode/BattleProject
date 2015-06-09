@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof (AudioSource))]
-
-public class MainWeaponGun : MainWeapon
+public class ItemGun : ItemWeapon 
 {
 	[SerializeField] private bool infiniteAmmo;
 	[SerializeField] private bool reloadable;
@@ -16,17 +14,15 @@ public class MainWeaponGun : MainWeapon
 	[SerializeField] private AudioClip shootSound;
 	[SerializeField] private Canvas ammuntionCanvas;
 	
-	private AudioSource audioSource;
 	protected bool reloading;
 	private float rt;
 	private int bulletSet;
 	private int ammunition;
 	
-	public void MainWeaponGunStart()
+	public void ItemGunStart()
 	{
-		this.MainWeaponStart();
+		this.ItemWeaponStart();
 		reloading = false;
-		audioSource = GetComponent<AudioSource>();
 		
 		if(!infiniteAmmo)
 		{	
@@ -40,9 +36,9 @@ public class MainWeaponGun : MainWeapon
 		}
 	}
 	
-	public void MainWeaponGunUpdate()
+	public void ItemGunUpdate() 
 	{
-		this.MainWeaponUpdate();
+		this.ItemWeaponUpdate();
 	}
 	
 	public void shoot()
@@ -51,8 +47,8 @@ public class MainWeaponGun : MainWeapon
 		{
 			if(bulletSet > 0)
 			{
-				audioSource.clip = shootSound;
-				audioSource.Play();
+				this.audioSource.clip = shootSound;
+				this.audioSource.Play();
 				Instantiate(bullet);
 				
 				if(!infiniteAmmo || reloadable)
@@ -64,14 +60,14 @@ public class MainWeaponGun : MainWeapon
 			{
 				if(reloadable)
 				{
-					audioSource.PlayOneShot(emptyClip);
+					this.audioSource.PlayOneShot(emptyClip);
 					reload();
 				}
 				bulletSet = ammunition - bulletSet;
 			}
 			else
 			{
-				audioSource.PlayOneShot(emptyClip);
+				this.audioSource.PlayOneShot(emptyClip);
 			}	
 		}	
 	}
@@ -100,7 +96,7 @@ public class MainWeaponGun : MainWeapon
 					}
 				}
 				
-				audioSource.PlayOneShot(reloadSound);
+				this.audioSource.PlayOneShot(reloadSound);
 				return (Time.time + reloadTime);
 			}
 			else
