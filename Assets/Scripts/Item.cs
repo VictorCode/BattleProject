@@ -35,7 +35,7 @@ public class Item : MonoBehaviour
 	//must be used first in each Item's Update function
 	public void ItemStart()
 	{
-		this.gameObject.tag = "Item"; //if not tagged "Item" the WIHolder won't work
+		this.gameObject.tag = "Item"; //if not tagged "Item" the WIHolder and picking up items won't work
 		this.GetComponent<Collider>().isTrigger = true;
 		anim = GetComponent<Animator>();
 		rigBody = GetComponent<Rigidbody>();

@@ -24,15 +24,18 @@ public class Inventory
 	{
 		if(itemNum < size)
 		{
-			for(int i = 0; i < size; i++)
+			int i = 0;
+			while(i < size)
 			{
-				if(items[i] != null)
+				if(items[i] == null)
 				{
 					items[i] = it;
 					itemNum++;
+					return i;
 				}
+				i++;
 			}
-			return 1;
+			return -1;
 		}
 		else
 		{

@@ -6,7 +6,7 @@ public class WIHolder : MonoBehaviour
 	[SerializeField] private AudioSource throwSound;
 	[SerializeField] private int forceThrow;
 
-	private GameObject[] objects;
+	public GameObject[] objects;
 	private Character character;
 	private int itemIndex;
 	private int weaponIndex;
@@ -19,7 +19,7 @@ public class WIHolder : MonoBehaviour
 	private int iMax;
 	private int oldItemIndex;
 	private int oldWeaponIndex;
-	private Transform hTransform;
+	public Transform hTransform;
 	private bool oldWeaponShow;
 
 	void Start ()

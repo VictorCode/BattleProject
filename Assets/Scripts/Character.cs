@@ -4,6 +4,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 [RequireComponent(typeof (CharacterMovement))]
 [RequireComponent(typeof (Animator))]
+[RequireComponent(typeof (BoxCollider))]
 
 public class Character : MonoBehaviour 
 {
@@ -18,6 +19,7 @@ public class Character : MonoBehaviour
 	[SerializeField] private float powerRegenTime;
 	[SerializeField] private float powerRegenSpeed;
 	[SerializeField] private AudioSource epowerSound;
+	[SerializeField] private AudioSource pickupSound;
 	[SerializeField] private AudioSource qpowerSound;
 	[SerializeField] private AudioSource fpowerSound;
 	[SerializeField] private AudioSource healthRegenSound;
@@ -173,6 +175,24 @@ public class Character : MonoBehaviour
 		else
 		{
 			power += needP;
+		}
+	}
+	
+	//use box collider to pickup or catch loose items
+	public void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Item")	//may need to try typeOf if possible
+		{
+			int theIndex = inventory.addItem(other.GetComponent<Item>());
+			if(theIndex != -1)
+			{
+				pickupSound.Play();
+				WIHolder temp = GameObject.Find("WIHolder").GetComponent<WIHolder>();
+				temp.objects[theIndex] = other.gameObject;
+				temp.objects[theIndex].transform.SetParent(temp.hTransform);
+				other.gameObject.transform.localPosition = Vector3.zero;
+				temp.objects[theIndex].SetActive(false);
+			}
 		}
 	}
 	
