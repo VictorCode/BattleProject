@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
 	protected bool isThrown;
 	protected Character character;
 	protected Animator anim;
-	protected Rigidbody rigBody;
+	public Rigidbody rigBody;
 	protected bool zooming;
 	private Camera cam;
 	private float normalFOV;
@@ -35,7 +35,7 @@ public class Item : MonoBehaviour
 	//must be used first in each Item's Update function
 	public void ItemStart()
 	{
-		this.gameObject.tag = "Item";
+		this.gameObject.tag = "Item"; //if not tagged "Item" the WIHolder won't work
 		this.GetComponent<Collider>().isTrigger = true;
 		anim = GetComponent<Animator>();
 		rigBody = GetComponent<Rigidbody>();
@@ -156,6 +156,11 @@ public class Item : MonoBehaviour
 			audioSource.clip = landingSound;
 			audioSource.Play();
 		}
+	}
+	
+	public void setThrown(bool tossed)
+	{
+		isThrown = tossed;
 	}
 	
 	//Item Input Interface

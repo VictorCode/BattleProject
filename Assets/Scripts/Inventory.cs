@@ -4,11 +4,17 @@ using System.Collections;
 public class Inventory
 {
 	private int size;
-	private Item[] items;
+	public Item[] items;
 	private int itemNum;
 	
 	public Inventory(int num)
 	{
+		//max inventory size is 5
+		if(num > 5)
+		{
+			num = 5;
+		}
+		
 		itemNum = 0;
 		size = num;
 		items = new Item[size];

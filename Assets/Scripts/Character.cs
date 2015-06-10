@@ -17,14 +17,13 @@ public class Character : MonoBehaviour
 	[SerializeField] private float healthRegenSpeed;
 	[SerializeField] private float powerRegenTime;
 	[SerializeField] private float powerRegenSpeed;
-	[SerializeField] private AudioSource throwSound;
 	[SerializeField] private AudioSource epowerSound;
 	[SerializeField] private AudioSource qpowerSound;
 	[SerializeField] private AudioSource fpowerSound;
 	[SerializeField] private AudioSource healthRegenSound;
 	[SerializeField] private AudioSource powerRegenSound;
 	[SerializeField] private AudioSource lowHealthSound;
-	[SerializeField] private MainWeapon[] mWeapons;
+	[SerializeField] public MainWeapon[] mWeapons;
 	[SerializeField] private Canvas hud;
 	
 	private float health;
@@ -200,6 +199,11 @@ public class Character : MonoBehaviour
 	public float getPowerRegenSpeed()
 	{
 		return this.powerRegenSpeed;
+	}
+	
+	public Inventory getInventory()
+	{
+		return this.inventory;
 	}
 	
 	public float getPowerMax()

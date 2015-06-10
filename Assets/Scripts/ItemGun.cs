@@ -28,7 +28,7 @@ public class ItemGun : ItemWeapon
 		{	
 			bulletSet = bulletSetMax;
 			ammunition = ammunitionMax;
-			Instantiate(ammuntionCanvas);
+			//Instantiate(ammuntionCanvas); need to make first
 		}
 		else
 		{

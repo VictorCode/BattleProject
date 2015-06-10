@@ -114,6 +114,7 @@
      <Compile Include="Assets\Scripts\MainWeapon.cs" />
      <Compile Include="Assets\Scripts\MainWeaponGun.cs" />
      <Compile Include="Assets\Scripts\Poof.cs" />
+     <Compile Include="Assets\Scripts\WIHolder.cs" />
      <None Include="Assets\ImportedAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
