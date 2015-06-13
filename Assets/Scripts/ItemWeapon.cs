@@ -41,20 +41,17 @@ public class ItemWeapon : Item
 	
 	void OnGUI()
 	{
-		if(!this.isThrown)
+		if(enemyDetect)
 		{
-			if(enemyDetect)
-			{
-				x = (Screen.width - crosshair.width) / 2;
-				y = (Screen.height - crosshair.height) / 2;
-				GUI.DrawTexture (new Rect (x, y,crosshairRed.width,crosshairRed.height), crosshairRed);
-			}
-			else
-			{
-				x = (Screen.width - crosshair.width) / 2;
-				y = (Screen.height - crosshair.height) / 2;
-				GUI.DrawTexture (new Rect (x, y,crosshair.width,crosshair.height), crosshair);
-			}
+			x = (Screen.width - crosshair.width) / 2;
+			y = (Screen.height - crosshair.height) / 2;
+			GUI.DrawTexture (new Rect (x, y,crosshairRed.width,crosshairRed.height), crosshairRed);
+		}
+		else
+		{
+			x = (Screen.width - crosshair.width) / 2;
+			y = (Screen.height - crosshair.height) / 2;
+			GUI.DrawTexture (new Rect (x, y,crosshair.width,crosshair.height), crosshair);
 		}
 	}
 }

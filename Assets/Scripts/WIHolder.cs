@@ -68,7 +68,7 @@ public class WIHolder : MonoBehaviour
 		if((Input.GetMouseButtonDown(2) || Input.GetKeyDown("t")) && !weaponShow)
 		{
 			throwSound.Play();
-			objects[itemIndex + itemOffset].GetComponent<Item>().setThrown(true);
+			objects[itemIndex + itemOffset].GetComponent<Item>().isThrown = true;
 			GameObject temp = objects[itemIndex + itemOffset];
 			temp.transform.SetParent(null);
 			temp.GetComponent<Rigidbody>().isKinematic = false;

@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Character.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemGun.cs">
     <Files>
-      <File FileName="Assets/Scripts/BlueChar.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Character.cs" Line="217" Column="27" />
+      <File FileName="Assets/Scripts/Item.cs" Line="26" Column="21" />
+      <File FileName="Assets/Scripts/ItemGun.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ItemWeapon.cs" Line="45" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

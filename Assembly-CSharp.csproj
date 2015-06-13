@@ -109,6 +109,7 @@
      <Compile Include="Assets\Scripts\BulletHit.cs" />
      <Compile Include="Assets\Scripts\Character.cs" />
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
+     <Compile Include="Assets\Scripts\Emitter.cs" />
      <Compile Include="Assets\Scripts\ExItem1.cs" />
      <Compile Include="Assets\Scripts\ExItem2.cs" />
      <Compile Include="Assets\Scripts\ExMainWeapon1.cs" />
@@ -116,10 +117,12 @@
      <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\ItemBox.cs" />
+     <Compile Include="Assets\Scripts\ItemCollision.cs" />
      <Compile Include="Assets\Scripts\ItemGun.cs" />
      <Compile Include="Assets\Scripts\ItemWeapon.cs" />
      <Compile Include="Assets\Scripts\MainWeapon.cs" />
      <Compile Include="Assets\Scripts\MainWeaponGun.cs" />
+     <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\Poof.cs" />
      <Compile Include="Assets\Scripts\WIHolder.cs" />
      <None Include="Assets\ImportedAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
