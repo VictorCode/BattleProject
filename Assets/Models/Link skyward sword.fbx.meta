@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 8c30bc23725c64e2f82bbea4a56f4e97
+timeCreated: 1434055377
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: al_handsL
+    100002: al_handsR
+    100004: Armature
+    100006: armL1
+    100008: armL2
+    100010: armR1
+    100012: armR2
+    100014: backbone1
+    100016: backbone2
+    100018: center
+    100020: chin
+    100022: clotchL
+    100024: clotchR
+    100026: face_root
+    100028: footL
+    100030: footR
+    100032: fskirtL1
+    100034: fskirtL2
+    100036: fskirtR1
+    100038: fskirtR2
+    100040: hairL
+    100042: hairR1
+    100044: hairR2
+    100046: handL
+    100048: handR
+    100050: head
+    100052: head_root
+    100054: legL1
+    100056: legL2
+    100058: legR1
+    100060: legR2
+    100062: //RootNode
+    100064: mayuL
+    100066: mayuR
+    100068: mesh0001
+    100070: momiL
+    100072: momiR
+    100074: mouth
+    100076: neck
+    100078: nw4r_root
+    100080: Piel
+    100082: pod
+    100084: rskirtL1
+    100086: rskirtL2
+    100088: rskirtR1
+    100090: rskirtR2
+    100092: shoulderL
+    100094: shoulderR
+    100096: toeL
+    100098: toeR
+    100100: waist
+    100102: weaponL
+    100104: weaponR
+    100106: z_cap1
+    100108: z_cap2
+    100110: z_cap3
+    100112: z_cap4
+    400000: al_handsL
+    400002: al_handsR
+    400004: Armature
+    400006: armL1
+    400008: armL2
+    400010: armR1
+    400012: armR2
+    400014: backbone1
+    400016: backbone2
+    400018: center
+    400020: chin
+    400022: clotchL
+    400024: clotchR
+    400026: face_root
+    400028: footL
+    400030: footR
+    400032: fskirtL1
+    400034: fskirtL2
+    400036: fskirtR1
+    400038: fskirtR2
+    400040: hairL
+    400042: hairR1
+    400044: hairR2
+    400046: handL
+    400048: handR
+    400050: head
+    400052: head_root
+    400054: legL1
+    400056: legL2
+    400058: legR1
+    400060: legR2
+    400062: //RootNode
+    400064: mayuL
+    400066: mayuR
+    400068: mesh0001
+    400070: momiL
+    400072: momiR
+    400074: mouth
+    400076: neck
+    400078: nw4r_root
+    400080: Piel
+    400082: pod
+    400084: rskirtL1
+    400086: rskirtL2
+    400088: rskirtR1
+    400090: rskirtR2
+    400092: shoulderL
+    400094: shoulderR
+    400096: toeL
+    400098: toeR
+    400100: waist
+    400102: weaponL
+    400104: weaponR
+    400106: z_cap1
+    400108: z_cap2
+    400110: z_cap3
+    400112: z_cap4
+    4300000: mesh0001
+    7400000: C4D Animation Take
+    9500000: //RootNode
+    13700000: mesh0001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0500000007
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

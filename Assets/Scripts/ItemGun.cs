@@ -28,7 +28,7 @@ public class ItemGun : ItemWeapon
 		{	
 			bulletSet = bulletSetMax;
 			ammunition = ammunitionMax;
-			//Instantiate(ammuntionCanvas); need to make first
+			Instantiate(ammuntionCanvas);
 		}
 		else
 		{
@@ -39,6 +39,16 @@ public class ItemGun : ItemWeapon
 	public void ItemGunUpdate() 
 	{
 		this.ItemWeaponUpdate();
+		
+		if (Input.GetKeyDown("r") && (ammunition != 0) && (bulletSet != bulletSetMax) && !reloading)
+		{
+			rt = reload();
+		}
+		
+		if(rt <= Time.time)
+		{
+			reloading = false;
+		}
 	}
 	
 	public void shoot()
@@ -61,9 +71,8 @@ public class ItemGun : ItemWeapon
 				if(reloadable)
 				{
 					this.audioSource.PlayOneShot(emptyClip);
-					reload();
+					rt = reload();
 				}
-				bulletSet = ammunition - bulletSet;
 			}
 			else
 			{

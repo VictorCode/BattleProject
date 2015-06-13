@@ -27,6 +27,7 @@ public class MainWeaponGun : MainWeapon
 		this.MainWeaponStart();
 		reloading = false;
 		audioSource = GetComponent<AudioSource>();
+		rt = 0.0f;
 		
 		if(!infiniteAmmo)
 		{	
@@ -43,6 +44,17 @@ public class MainWeaponGun : MainWeapon
 	public void MainWeaponGunUpdate()
 	{
 		this.MainWeaponUpdate();
+		
+		//universal reload input
+		if (Input.GetKeyDown("r") && (ammunition != 0) && (bulletSet != bulletSetMax) && !reloading)
+		{
+			rt = reload();
+		}
+		
+		if(rt <= Time.time)
+		{
+			reloading = false;
+		}
 	}
 	
 	public void shoot()
@@ -65,9 +77,8 @@ public class MainWeaponGun : MainWeapon
 				if(reloadable)
 				{
 					audioSource.PlayOneShot(emptyClip);
-					reload();
+					rt = reload();
 				}
-				bulletSet = ammunition - bulletSet;
 			}
 			else
 			{

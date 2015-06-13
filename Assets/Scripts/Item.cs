@@ -35,7 +35,7 @@ public class Item : MonoBehaviour
 	//must be used first in each Item's Update function
 	public void ItemStart()
 	{
-		this.gameObject.tag = "Item"; //if not tagged "Item" the WIHolder and picking up items won't work
+		this.gameObject.tag = "Item"; //if not tagged "Item" the WIHolder and picking up etc... items won't work
 		this.GetComponent<Collider>().isTrigger = true;
 		anim = GetComponent<Animator>();
 		rigBody = GetComponent<Rigidbody>();
@@ -129,7 +129,7 @@ public class Item : MonoBehaviour
 		{
 			zooming = true;
 			t = Time.timeSinceLevelLoad - Time.time;
-			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,zoomDist, (t + .01f) * Time.deltaTime * 1000);
+			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,1000/zoomDist, (t + .01f) * Time.deltaTime * 1000);
 		}
 	}
 	

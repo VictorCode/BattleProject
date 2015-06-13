@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof (Character))]
 [RequireComponent(typeof (Animator))]
 [RequireComponent(typeof (Camera))]
 
@@ -28,7 +27,7 @@ public class MainWeapon : MonoBehaviour
 	public void MainWeaponStart()
 	{
 		this.gameObject.tag = "MainWeapon";
-		character = GetComponent<Character>();
+		character = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
 		anim = GetComponent<Animator>();
 		cam = GameObject.Find("MainCamera").GetComponent<Camera>();
 		normalFOV = cam.fieldOfView;
@@ -78,7 +77,7 @@ public class MainWeapon : MonoBehaviour
 		{
 			t = Time.timeSinceLevelLoad - Time.time;
 			zooming = true;
-			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,zoomDist, (t + .01f) * Time.deltaTime * 1000);
+			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,1000/zoomDist, (t + .01f) * Time.deltaTime * 1500);
 		}
 	}
 	

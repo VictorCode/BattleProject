@@ -76,11 +76,8 @@ public class WIHolder : MonoBehaviour
 			temp.GetComponent<Rigidbody>().isKinematic = false;
 			temp.GetComponent<Collider>().isTrigger = false;
 			temp.GetComponent<Rigidbody>().AddForce(forceThrow * 100 * transform.forward);
-			objects[itemIndex] = new GameObject();
-			objects[itemIndex].transform.SetParent(hTransform);
-			objects[itemIndex].transform.localPosition = Vector3.zero;
-			objects[itemIndex].SetActive(false);
 			inventory.removeItem(itemIndex);
+			objects[itemIndex] = null;
 			weaponShow = true;
 		}
 		
@@ -179,30 +176,25 @@ public class WIHolder : MonoBehaviour
 	
 	private void setupHolding()
 	{
-		for(int i = 0; i < objects.Length; i++)
-		{
-			objects[i] = new GameObject();
-			objects[i].transform.SetParent(hTransform);
-			objects[i].transform.localPosition = Vector3.zero;
-			
-			if(i > 1)
-			{
-				objects[i].SetActive(false);
-			}
-		}
+		objects[0] = new GameObject();
+		objects[0].transform.SetParent(hTransform);
+		objects[0].transform.localPosition = Vector3.zero;
 		
 		for(int i = 0; i < wMax; i++)
 		{
-			objects[i + 1] = character.mWeapons[i].gameObject;
+			objects[i + 1] = Instantiate(character.mWeapons[i].gameObject);
+			objects[i + 1].transform.SetParent(hTransform);
+			objects[i + 1].transform.localPosition = Vector3.zero;
 		}
 		
-		for(int i = 0; i < inventory.items.Length; i++)
+		for(int i = 0; i < 5;i++ )
 		{
-			if(inventory.items[i] != null)
-			{
-				objects[i + wMax + 1] = inventory.items[i].gameObject;
-			}
+			objects[i + itemOffset + 1] = new GameObject();
+			objects[i + itemOffset + 1].transform.SetParent(hTransform);
+			objects[i + itemOffset + 1].transform.localPosition = Vector3.zero;
 		}
+		
+		showWeapon(weaponIndex);
 	}
 	
 	private void showWeapon(int index)

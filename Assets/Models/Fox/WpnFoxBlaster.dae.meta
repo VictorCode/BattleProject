@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 0f2e4b38d24d54b6b829fed0452d7fbd
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: AttachN
+    100002: BlasterzAllN
+    100004: Cove2N
+    100006: Cover1N
+    100008: CylinderN
+    100010: EjectionPortN
+    100012: FiringHammerN
+    100014: HaveN
+    100016: Joint1
+    100018: Joint2N
+    100020: polygon0
+    100022: polygon2
+    100024: polygon3
+    100026: polygon4
+    100028: polygon5
+    100030: polygon6
+    100032: polygon7
+    100034: polygon8
+    100036: polygon9
+    100038: RearSlideN
+    100040: RotN
+    100042: SightN
+    100044: TopN
+    100046: TriggerN
+    100048: //RootNode
+    400000: AttachN
+    400002: BlasterzAllN
+    400004: Cove2N
+    400006: Cover1N
+    400008: CylinderN
+    400010: EjectionPortN
+    400012: FiringHammerN
+    400014: HaveN
+    400016: Joint1
+    400018: Joint2N
+    400020: polygon0
+    400022: polygon2
+    400024: polygon3
+    400026: polygon4
+    400028: polygon5
+    400030: polygon6
+    400032: polygon7
+    400034: polygon8
+    400036: polygon9
+    400038: RearSlideN
+    400040: RotN
+    400042: SightN
+    400044: TopN
+    400046: TriggerN
+    400048: //RootNode
+    4300000: polygon0
+    4300002: polygon2
+    4300004: polygon3
+    4300006: polygon4
+    4300008: polygon5
+    4300010: polygon6
+    4300012: polygon7
+    4300014: polygon8
+    4300016: polygon9
+    9500000: //RootNode
+    13700000: polygon0
+    13700002: polygon2
+    13700004: polygon3
+    13700006: polygon4
+    13700008: polygon5
+    13700010: polygon6
+    13700012: polygon7
+    13700014: polygon8
+    13700016: polygon9
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

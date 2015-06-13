@@ -308,6 +308,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
         
+		public bool isGrounded()
+		{
+			return this.m_CharacterController.isGrounded;
+		}
         
         public bool isWalking()
         {

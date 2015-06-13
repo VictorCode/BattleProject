@@ -30,7 +30,7 @@ public class Character : MonoBehaviour
 	
 	private float health;
 	private float power;
-	protected CharacterMovement charMovement;
+	public CharacterMovement charMovement;
 	protected Animator anim;
 	private float timeSinceHit;
 	private float timeSincePow;
@@ -59,7 +59,7 @@ public class Character : MonoBehaviour
 		lhSoundPlayed = false;
 		hDangerThreshold = (int) (healthMax * .2);
 		inventory = new Inventory(itemMax);
-		// need to make it first...Instantiate(hud);
+		Instantiate(hud);
 	}
 	
 	//must be used in each character's Update function to work
@@ -193,6 +193,20 @@ public class Character : MonoBehaviour
 				other.gameObject.transform.localPosition = Vector3.zero;
 				temp.objects[theIndex].SetActive(false);
 			}
+		}
+	}
+	
+	public void pickUpItem(Item it)
+	{
+		int theIndex = inventory.addItem(it);
+		if(theIndex != -1)
+		{
+			pickupSound.Play();
+			WIHolder temp = GameObject.Find("WIHolder").GetComponent<WIHolder>();
+			temp.objects[theIndex] = it.gameObject;
+			temp.objects[theIndex].transform.SetParent(temp.hTransform);
+			it.gameObject.transform.localPosition = Vector3.zero;
+			temp.objects[theIndex].SetActive(false);
 		}
 	}
 	
