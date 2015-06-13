@@ -115,6 +115,7 @@
      <Compile Include="Assets\Scripts\ExMainWeapon2.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
+     <Compile Include="Assets\Scripts\ItemBox.cs" />
      <Compile Include="Assets\Scripts\ItemGun.cs" />
      <Compile Include="Assets\Scripts\ItemWeapon.cs" />
      <Compile Include="Assets\Scripts\MainWeapon.cs" />

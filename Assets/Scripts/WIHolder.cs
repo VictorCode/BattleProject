@@ -10,9 +10,8 @@ public class WIHolder : MonoBehaviour
 	private Character character;
 	private int itemIndex;
 	private int weaponIndex;
-	private int itemOffset;
+	public int itemOffset;
 	private bool weaponShow;
-	private Inventory inventory;
 	private float mWheel;
 	private float mWheelOld;
 	private int wMax;
@@ -27,7 +26,6 @@ public class WIHolder : MonoBehaviour
 		hTransform = this.transform;
 		character = (Character) GameObject.FindObjectOfType(typeof(Character));
 		objects = new GameObject[character.getItemMax() + character.getWeaponMax() + 1];
-		inventory = character.getInventory();
 		itemOffset = character.getWeaponMax();
 		weaponIndex = 1;
 		oldItemIndex = 1;
@@ -70,14 +68,14 @@ public class WIHolder : MonoBehaviour
 		if((Input.GetMouseButtonDown(2) || Input.GetKeyDown("t")) && !weaponShow)
 		{
 			throwSound.Play();
-			inventory.items[itemIndex].setThrown(true);
-			GameObject temp = objects[itemIndex];
-			temp.transform.SetParent(temp.transform);
+			objects[itemIndex + itemOffset].GetComponent<Item>().setThrown(true);
+			GameObject temp = objects[itemIndex + itemOffset];
+			temp.transform.SetParent(null);
 			temp.GetComponent<Rigidbody>().isKinematic = false;
 			temp.GetComponent<Collider>().isTrigger = false;
 			temp.GetComponent<Rigidbody>().AddForce(forceThrow * 100 * transform.forward);
-			inventory.removeItem(itemIndex);
-			objects[itemIndex] = null;
+			objects[itemIndex + itemOffset] = new GameObject();
+			character.inventory.removeItem(itemIndex);
 			weaponShow = true;
 		}
 		
@@ -187,11 +185,11 @@ public class WIHolder : MonoBehaviour
 			objects[i + 1].transform.localPosition = Vector3.zero;
 		}
 		
-		for(int i = 0; i < 5;i++ )
+		for(int i = 1; i <= 5; i++)
 		{
-			objects[i + itemOffset + 1] = new GameObject();
-			objects[i + itemOffset + 1].transform.SetParent(hTransform);
-			objects[i + itemOffset + 1].transform.localPosition = Vector3.zero;
+			objects[i + itemOffset] = new GameObject();
+			objects[i + itemOffset].transform.SetParent(hTransform);
+			objects[i + itemOffset].transform.localPosition = Vector3.zero;
 		}
 		
 		showWeapon(weaponIndex);

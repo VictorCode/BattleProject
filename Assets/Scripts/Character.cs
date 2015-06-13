@@ -38,7 +38,7 @@ public class Character : MonoBehaviour
 	private bool pregSoundPlayed;
 	private bool lhSoundPlayed;
 	private int hDangerThreshold;
-	private Inventory inventory;
+	public Inventory inventory;
 	
 	//Reminder: the MainCamera object for the character must be named exactly "MainCamera" for items and weapons to find it
 	//must be used first in each character's Start function to initialize properly
@@ -181,17 +181,21 @@ public class Character : MonoBehaviour
 	//use box collider to pickup or catch loose items
 	public void OnTriggerEnter(Collider other)
 	{
-		if(other.tag == "Item")	//may need to try typeOf if possible
+		if(other.tag == "")	//may need to try typeOf if possible
 		{
 			int theIndex = inventory.addItem(other.GetComponent<Item>());
 			if(theIndex != -1)
 			{
 				pickupSound.Play();
 				WIHolder temp = GameObject.Find("WIHolder").GetComponent<WIHolder>();
-				temp.objects[theIndex] = other.gameObject;
-				temp.objects[theIndex].transform.SetParent(temp.hTransform);
+				temp.objects[theIndex + temp.itemOffset] = other.gameObject;
+				temp.objects[theIndex + temp.itemOffset].transform.SetParent(temp.hTransform);
 				other.gameObject.transform.localPosition = Vector3.zero;
-				temp.objects[theIndex].SetActive(false);
+				temp.objects[theIndex + temp.itemOffset].SetActive(false);
+			}
+			else
+			{
+				Destroy(other.gameObject);
 			}
 		}
 	}
@@ -203,10 +207,14 @@ public class Character : MonoBehaviour
 		{
 			pickupSound.Play();
 			WIHolder temp = GameObject.Find("WIHolder").GetComponent<WIHolder>();
-			temp.objects[theIndex] = it.gameObject;
-			temp.objects[theIndex].transform.SetParent(temp.hTransform);
+			temp.objects[theIndex + temp.itemOffset] = it.gameObject;
+			temp.objects[theIndex + temp.itemOffset].transform.SetParent(temp.hTransform);
 			it.gameObject.transform.localPosition = Vector3.zero;
-			temp.objects[theIndex].SetActive(false);
+			temp.objects[theIndex + temp.itemOffset].SetActive(false);
+		}
+		else
+		{
+			Destroy(it.gameObject);
 		}
 	}
 	

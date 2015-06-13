@@ -11,8 +11,6 @@ public class BlueChar : Character
 		this.CharacterStart();
 		
 		
-		
-		
 	}
 	
 	// Update is called once per frame

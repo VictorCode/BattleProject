@@ -31,7 +31,7 @@ public class Inventory
 				{
 					items[i] = it;
 					itemNum++;
-					return i;
+					return i + 1;
 				}
 				i++;
 			}
@@ -45,9 +45,9 @@ public class Inventory
 	
 	public void removeItem(int index)
 	{
-		if(items[index] != null)
+		if(items[index - 1] != null)
 		{
-			items[index] = null;
+			items[index - 1] = null;
 			itemNum--;
 		}
 	}

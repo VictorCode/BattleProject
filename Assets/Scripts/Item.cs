@@ -37,6 +37,13 @@ public class Item : MonoBehaviour
 	{
 		this.gameObject.tag = "Item"; //if not tagged "Item" the WIHolder and picking up etc... items won't work
 		this.GetComponent<Collider>().isTrigger = true;
+		
+		if(zoomDist < 20)
+		{
+			zoomDist = 20;
+		}
+		
+		character = GameObject.FindWithTag("Player").GetComponent<Character>();
 		anim = GetComponent<Animator>();
 		rigBody = GetComponent<Rigidbody>();
 		cam = GameObject.Find("MainCamera").GetComponent<Camera>();
@@ -129,7 +136,7 @@ public class Item : MonoBehaviour
 		{
 			zooming = true;
 			t = Time.timeSinceLevelLoad - Time.time;
-			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,1000/zoomDist, (t + .01f) * Time.deltaTime * 1000);
+			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,1000/zoomDist, (t + .01f) * Time.deltaTime * 1500);
 		}
 	}
 	

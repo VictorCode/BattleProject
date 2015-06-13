@@ -3,7 +3,6 @@ using System.Collections;
 
 public class ExItem1 : ItemGun 
 {
-
 	// Use this for initialization
 	void Start () 
 	{
@@ -13,21 +12,21 @@ public class ExItem1 : ItemGun
 	// Update is called once per frame
 	void Update () 
 	{
-		this.ItemUpdate();
+		this.ItemGunUpdate();
 		
 		if(!character.charMovement.isWalking())
 		{
 			zoomOut();
 		}
 		
-		if (Input.GetMouseButtonDown(0) && (character.charMovement.isWalking() || !character.charMovement.isGrounded()))
+		if (Input.GetMouseButtonDown(0) && !this.reloading && (character.charMovement.isWalking() || !character.charMovement.isGrounded()))
 		{
 			shoot();
 		}
 		
 		if(Input.GetMouseButton(1))
 		{
-			if(character.charMovement.isWalking())
+			if(!this.reloading && character.charMovement.isWalking())
 			{
 				zoomIn();
 			}

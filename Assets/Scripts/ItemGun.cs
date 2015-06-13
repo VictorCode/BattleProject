@@ -104,7 +104,6 @@ public class ItemGun : ItemWeapon
 						ammunition = 0;
 					}
 				}
-				
 				this.audioSource.PlayOneShot(reloadSound);
 				return (Time.time + reloadTime);
 			}

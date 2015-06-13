@@ -31,6 +31,11 @@ public class MainWeapon : MonoBehaviour
 		anim = GetComponent<Animator>();
 		cam = GameObject.Find("MainCamera").GetComponent<Camera>();
 		normalFOV = cam.fieldOfView;
+		
+		if(zoomDist < 20)
+		{
+			zoomDist = 20;
+		}
 	}
 	
 	//must be used first in each MainWeapon's Update function
