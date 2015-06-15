@@ -8,7 +8,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
-    
+	[RequireComponent(typeof (WeaponCollision))]
+	
     public class CharacterMovement : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
@@ -118,8 +119,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                                m_CharacterController.height/2f);
             desiredMove = Vector3.ProjectOnPlane(desiredMove, hitInfo.normal).normalized;
 
-            m_MoveDir.x = desiredMove.x*speed;
-            m_MoveDir.z = desiredMove.z*speed;
+			
+			m_MoveDir.x = desiredMove.x*speed;
+			m_MoveDir.z = desiredMove.z*speed;
+			
 
             if (m_CharacterController.isGrounded)
             {

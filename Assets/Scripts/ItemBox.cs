@@ -13,7 +13,7 @@ public class ItemBox : MonoBehaviour
 	
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject.tag == "Player")
+		if(other.gameObject.tag == "Player" && (other.GetComponent<Character>().inventory.getItemNum() < 5))
 		{
 			GameObject temp = Instantiate(items[((int)Mathf.Round(Random.Range(0.0f,items.Length - 1)))].gameObject);
 			temp.transform.SetParent(GameObject.Find("WIHolder").transform);

@@ -14,6 +14,7 @@ public class Item : MonoBehaviour
 	[SerializeField] public Sprite symbol;
 	
 	public bool isThrown;
+	public int id;
 	public bool emitterCheck;
 	protected Character character;
 	protected Animator anim;
@@ -28,6 +29,7 @@ public class Item : MonoBehaviour
 	//must be used first in each Item's Update function
 	public void ItemStart()
 	{
+		this.id = (int) Time.time;
 		this.gameObject.tag = "Item"; //if not tagged "Item" the WIHolder and picking up etc... items won't work
 		this.GetComponent<Collider>().isTrigger = true;
 		

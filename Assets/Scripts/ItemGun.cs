@@ -18,11 +18,15 @@ public class ItemGun : ItemWeapon
 	private float rt;
 	private int bulletSet;
 	private int ammunition;
+	private int need; //for reloading
+	private int reloadDX;
 	
 	public void ItemGunStart()
 	{
 		this.ItemWeaponStart();
 		reloading = false;
+		need = 0;
+		reloadDX = WIHolder.changeId;
 		
 		if(!infiniteAmmo)
 		{	
@@ -40,15 +44,25 @@ public class ItemGun : ItemWeapon
 	{
 		this.ItemWeaponUpdate();
 		
+		if(reloading && (reloadDX != WIHolder.changeId))
+		{
+			reloading = false;
+		}
+			
+		if(rt <= Time.time)
+		{
+			if((reloadDX == WIHolder.changeId) && reloading)
+			{
+				finReload();
+			}
+			reloading = false;
+		}
+		
 		if (Input.GetKeyDown("r") && (ammunition != 0) && (bulletSet != bulletSetMax) && !reloading)
 		{
 			rt = reload();
 		}
 		
-		if(rt <= Time.time)
-		{
-			reloading = false;
-		}
 	}
 	
 	public void shoot()
@@ -86,23 +100,14 @@ public class ItemGun : ItemWeapon
 	{
 		if(reloadable && !reloading)
 		{
-			int need = bulletSetMax - bulletSet;
+			need = bulletSetMax - bulletSet;
 			
 			if(need != 0)
 			{
 				reloading = true;
 				if(!infiniteAmmo)
 				{
-					if(ammunition >= need)
-					{
-						ammunition -= need;
-						bulletSet += need;
-					}
-					else
-					{
-						bulletSet += ammunition;
-						ammunition = 0;
-					}
+					this.reloadDX = WIHolder.changeId;
 				}
 				this.audioSource.PlayOneShot(reloadSound);
 				return (Time.time + reloadTime);
@@ -118,6 +123,23 @@ public class ItemGun : ItemWeapon
 		}
 	}
 	
+	private void finReload()
+	{
+		if(reloadDX == WIHolder.changeId)
+		{
+			if(ammunition >= need)
+			{
+				ammunition -= need;
+				bulletSet += need;
+			}
+			else
+			{
+				bulletSet += ammunition;
+				ammunition = 0;
+			}
+		}
+	}
+	
 	public void addAmmo(int num)
 	{
 		if(num <= (ammunitionMax - ammunition))
@@ -128,5 +150,15 @@ public class ItemGun : ItemWeapon
 		{
 			ammunition += (ammunitionMax - ammunition);
 		}
+	}
+	
+	public int getAmmunition()
+	{
+		return this.ammunition;
+	}
+	
+	public int getBulletSet()
+	{
+		return this.bulletSet;
 	}
 }

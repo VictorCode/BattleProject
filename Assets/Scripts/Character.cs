@@ -25,6 +25,7 @@ public class Character : MonoBehaviour
 	[SerializeField] private AudioSource lowHealthSound;
 	[SerializeField] public MainWeapon[] mWeapons;
 	[SerializeField] private Canvas hud;
+	public Inventory inventory;
 	
 	private float health;
 	private float power;
@@ -34,9 +35,8 @@ public class Character : MonoBehaviour
 	private float timeSincePow;
 	private bool hregSoundPlayed;
 	private bool pregSoundPlayed;
-	private bool lhSoundPlayed;
 	private int hDangerThreshold;
-	public Inventory inventory;
+	private bool lhSoundPlaying;
 	
 	//Reminder: the MainCamera object for the character must be named exactly "MainCamera" for items and weapons to find it
 	//must be used first in each character's Start function to initialize properly
@@ -54,10 +54,10 @@ public class Character : MonoBehaviour
 		timeSincePow = 0.0f;
 		hregSoundPlayed = false;
 		pregSoundPlayed = false;
-		lhSoundPlayed = false;
+		lhSoundPlaying = false;
 		hDangerThreshold = (int) (healthMax * .2);
-		inventory = new Inventory(itemMax);
 		Instantiate(hud);
+		inventory = new Inventory(itemMax);
 	}
 	
 	//must be used in each character's Update function to work
@@ -80,21 +80,21 @@ public class Character : MonoBehaviour
 				{
 					health = healthMax;
 					hregSoundPlayed = false;
-					lhSoundPlayed = false;
 				}
 			}
 			
 			if(health <= hDangerThreshold)
 			{
-				if(!lhSoundPlayed)
+				if(!lhSoundPlaying)
 				{
 					lowHealthSound.Play();
-					lhSoundPlayed = true;
+					lhSoundPlaying = true;
 				}
 			}
 			else
 			{
 				lowHealthSound.Stop();
+				lhSoundPlaying = false;
 			}
 		}
 		

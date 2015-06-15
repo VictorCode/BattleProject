@@ -21,6 +21,8 @@ public class MainWeaponGun : MainWeapon
 	private float rt;
 	private int bulletSet;
 	private int ammunition;
+	private int need; //for reloading
+	private int reloadDX;
 	
 	public void MainWeaponGunStart()
 	{
@@ -28,6 +30,8 @@ public class MainWeaponGun : MainWeapon
 		reloading = false;
 		audioSource = GetComponent<AudioSource>();
 		rt = 0.0f;
+		need = 0;
+		reloadDX = WIHolder.changeId;
 		
 		if(!infiniteAmmo)
 		{	
@@ -46,14 +50,24 @@ public class MainWeaponGun : MainWeapon
 		this.MainWeaponUpdate();
 		
 		//universal reload input
-		if (Input.GetKeyDown("r") && (ammunition != 0) && (bulletSet != bulletSetMax) && !reloading)
+		
+		if(reloading && (reloadDX != WIHolder.changeId))
 		{
-			rt = reload();
+			reloading = false;
 		}
 		
 		if(rt <= Time.time)
 		{
+			if((reloadDX == WIHolder.changeId) && reloading)
+			{
+				finReload();
+			}
 			reloading = false;
+		}
+		
+		if (Input.GetKeyDown("r") && (ammunition != 0) && (bulletSet != bulletSetMax) && !reloading)
+		{
+			rt = reload();
 		}
 	}
 	
@@ -92,23 +106,14 @@ public class MainWeaponGun : MainWeapon
 	{
 		if(reloadable && !reloading)
 		{
-			int need = bulletSetMax - bulletSet;
+			need = bulletSetMax - bulletSet;
 			
 			if(need != 0)
 			{
 				reloading = true;
 				if(!infiniteAmmo)
 				{
-					if(ammunition >= need)
-					{
-						ammunition -= need;
-						bulletSet += need;
-					}
-					else
-					{
-						bulletSet += ammunition;
-						ammunition = 0;
-					}
+					reloadDX = WIHolder.changeId;
 				}
 				
 				audioSource.PlayOneShot(reloadSound);
@@ -125,6 +130,23 @@ public class MainWeaponGun : MainWeapon
 		}
 	}
 	
+	private void finReload()
+	{
+		if(reloadDX == WIHolder.changeId)
+		{
+			if(ammunition >= need)
+			{
+				ammunition -= need;
+				bulletSet += need;
+			}
+			else
+			{
+				bulletSet += ammunition;
+				ammunition = 0;
+			}
+		}
+	}
+	
 	public void addAmmo(int num)
 	{
 		if(num <= (ammunitionMax - ammunition))
@@ -135,5 +157,15 @@ public class MainWeaponGun : MainWeapon
 		{
 			ammunition += (ammunitionMax - ammunition);
 		}
+	}
+	
+	public int getBulletSet()
+	{
+		return this.bulletSet;
+	}
+	
+	public int getAmmuntion()
+	{
+		return this.ammunition;
 	}
 }

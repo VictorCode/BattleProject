@@ -14,7 +14,7 @@ public class ExItem1 : ItemGun
 	{
 		this.ItemGunUpdate();
 		
-		if(!character.charMovement.isWalking())
+		if(!character.charMovement.isWalking() || this.reloading)
 		{
 			zoomOut();
 		}
@@ -26,7 +26,7 @@ public class ExItem1 : ItemGun
 		
 		if(Input.GetMouseButton(1))
 		{
-			if(!this.reloading && character.charMovement.isWalking())
+			if(character.charMovement.isWalking() || !character.charMovement.isGrounded())
 			{
 				zoomIn();
 			}
@@ -34,6 +34,15 @@ public class ExItem1 : ItemGun
 		else
 		{
 			zoomOut();
+		}
+		
+		if((this.getAmmunition()) == 0 && (this.getBulletSet() == 0))
+		{
+			this.usedUp = true;
+		}
+		else
+		{
+			this.usedUp = false;
 		}
 	}
 }

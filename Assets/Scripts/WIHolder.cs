@@ -20,6 +20,7 @@ public class WIHolder : MonoBehaviour
 	private int oldWeaponIndex;
 	public Transform hTransform;
 	private bool oldWeaponShow;
+	static public int changeId; //use to see if weapon/item has changed since last used
 
 	void Start ()
 	{
@@ -35,6 +36,7 @@ public class WIHolder : MonoBehaviour
 		oldWeaponShow = true;
 		mWheel = 0.0f;
 		mWheelOld = 0.0f;
+		changeId = -100000;//increment up so more changes stored
 		wMax = character.getWeaponMax();
 		setupHolding(); // must be last thing to occur in Start
 	}
@@ -157,6 +159,7 @@ public class WIHolder : MonoBehaviour
 		
 		if((itemIndex != oldItemIndex) || (weaponIndex != oldWeaponIndex) || (weaponShow != oldWeaponShow))
 		{
+			changeId++;
 			if(weaponShow)
 			{
 				showWeapon(weaponIndex);
@@ -198,7 +201,7 @@ public class WIHolder : MonoBehaviour
 	private void showWeapon(int index)
 	{
 		hideAll();
-		objects[index].SetActive(true);
+		objects[index].SetActive(true);	
 	}
 	
 	private void showItem(int index)
