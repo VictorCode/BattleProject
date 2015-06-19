@@ -31,7 +31,7 @@ public class Item : MonoBehaviour
 	{
 		this.id = (int) Time.time;
 		this.gameObject.tag = "Item"; //if not tagged "Item" the WIHolder and picking up etc... items won't work
-		this.GetComponent<Collider>().isTrigger = true;
+		this.GetComponent<BoxCollider>().isTrigger = true; //Need for weapon collission
 		
 		if(zoomDist < 20)
 		{

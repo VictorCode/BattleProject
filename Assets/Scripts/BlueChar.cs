@@ -9,8 +9,6 @@ public class BlueChar : Character
 	void Start () 
 	{
 		this.CharacterStart();
-		
-		
 	}
 	
 	// Update is called once per frame

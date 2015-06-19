@@ -17,7 +17,8 @@ public class ExMainWeapon1 : MainWeaponGun
 			zoomOut();
 		}
 		
-		if (Input.GetMouseButtonDown(0) && (character.charMovement.isWalking() || !character.charMovement.isGrounded()))
+		
+		if (Input.GetMouseButtonDown(0) && !this.reloading && (character.charMovement.isWalking() || !character.charMovement.isGrounded()))
 		{
 			shoot();
 		}

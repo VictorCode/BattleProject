@@ -32,11 +32,11 @@ public class ItemAmmCanv : MonoBehaviour
 	
 	void Update () 
 	{
-		if(weapon.usedUp && weapon.isThrown || weapon == null)
+		if((weapon.usedUp && weapon.isThrown) || weapon == null)
 		{
 			Destroy(this.gameObject);
 		}
-	
+		
 		if(weapon.isActiveAndEnabled && !weapon.isThrown)
 		{
 			bulletGui.text = weapon.getBulletSet().ToString();

@@ -29,7 +29,9 @@ public class Pickup : MonoBehaviour
 			}
 			else
 			{
-				Destroy(other.gameObject);
+				other.gameObject.GetComponent<Item>().enabled = false;
+				other.gameObject.GetComponent<Item>().isThrown = true;
+				other.gameObject.GetComponent<Item>().emitterCheck = true;
 			}
 		}
 	}
@@ -55,7 +57,9 @@ public class Pickup : MonoBehaviour
 		}
 		else
 		{
-			Destroy(it.gameObject);
+			it.gameObject.GetComponent<Item>().enabled = false;
+			it.gameObject.GetComponent<Item>().isThrown = true;
+			it.gameObject.GetComponent<Item>().emitterCheck = true;
 		}
 	}
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof (Animator))]
 [RequireComponent(typeof (Camera))]
+[RequireComponent(typeof (BoxCollider))]
 
 public class MainWeapon : MonoBehaviour 
 {
@@ -27,6 +28,7 @@ public class MainWeapon : MonoBehaviour
 	public void MainWeaponStart()
 	{
 		this.gameObject.tag = "MainWeapon";
+		this.GetComponent<BoxCollider>().isTrigger = true; //Need for weapon collission
 		character = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
 		anim = GetComponent<Animator>();
 		cam = GameObject.Find("MainCamera").GetComponent<Camera>();
@@ -45,7 +47,7 @@ public class MainWeapon : MonoBehaviour
 		
 		if(Physics.Raycast(mouseRay, out hitInfo))
 		{
-			if(hitInfo.transform.gameObject.tag == "enemy")
+			if(hitInfo.transform.gameObject.tag == "enemy" || hitInfo.transform.gameObject.tag == "bullet")
 			{
 				enemyDetect = true;
 			}

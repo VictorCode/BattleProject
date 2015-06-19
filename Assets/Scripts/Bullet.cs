@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
 	
 	void Start () 
 	{
+		this.gameObject.tag = "bullet"; // needed for weapon gui to function
 		emitter = GameObject.Find("Emitter").transform;
 		this.transform.position = emitter.position;
 		this.transform.rotation = emitter.rotation;
