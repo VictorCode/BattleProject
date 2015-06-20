@@ -17,7 +17,6 @@ public class ExMainWeapon1 : MainWeaponGun
 			zoomOut();
 		}
 		
-		
 		if (Input.GetMouseButtonDown(0) && !this.reloading && (character.charMovement.isWalking() || !character.charMovement.isGrounded()))
 		{
 			shoot();
@@ -28,6 +27,10 @@ public class ExMainWeapon1 : MainWeaponGun
 			if(character.charMovement.isWalking() || !character.charMovement.isGrounded())
 			{
 				zoomIn();
+			}
+			else
+			{
+				zoomOut();
 			}
 		}
 		else

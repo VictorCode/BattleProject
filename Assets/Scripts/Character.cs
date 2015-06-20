@@ -3,9 +3,8 @@ using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
 
 [RequireComponent(typeof (CharacterMovement))]
-[RequireComponent(typeof (Animator))]
 
-public class Character : MonoBehaviour 
+public class Character : MonoBehaviour
 {
 	[SerializeField] private float healthMax;
 	[SerializeField] private float powerMax;
@@ -25,6 +24,7 @@ public class Character : MonoBehaviour
 	[SerializeField] private AudioSource lowHealthSound;
 	[SerializeField] public MainWeapon[] mWeapons;
 	[SerializeField] private Canvas hud;
+	[SerializeField] private Canvas invHud;
 	public Inventory inventory;
 	
 	private float health;
@@ -57,6 +57,7 @@ public class Character : MonoBehaviour
 		lhSoundPlaying = false;
 		hDangerThreshold = (int) (healthMax * .2);
 		Instantiate(hud);
+		Instantiate(invHud);
 		inventory = new Inventory(itemMax);
 	}
 	

@@ -62,7 +62,6 @@ public class ItemGun : ItemWeapon
 		{
 			rt = reload();
 		}
-		
 	}
 	
 	public void shoot()

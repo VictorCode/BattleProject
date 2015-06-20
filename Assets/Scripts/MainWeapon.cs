@@ -47,7 +47,7 @@ public class MainWeapon : MonoBehaviour
 		
 		if(Physics.Raycast(mouseRay, out hitInfo))
 		{
-			if(hitInfo.transform.gameObject.tag == "enemy" || hitInfo.transform.gameObject.tag == "bullet")
+			if(hitInfo.transform.gameObject.tag == "enemy")
 			{
 				enemyDetect = true;
 			}
