@@ -31,6 +31,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		[SerializeField] private int maxJumps;
 		[SerializeField] private float sideBackRunDiv;
 
+		public bool idle;
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -53,7 +54,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			{
 				sideBackRunDiv = 1;
 			}
-        
+			
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -96,6 +97,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+            
         }
 
         private void PlayLandingSound()
@@ -120,6 +122,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 			m_MoveDir.x = desiredMove.x*speed;
 			m_MoveDir.z = desiredMove.z*speed;
+			
+			if((m_MoveDir.x == 0) && (m_MoveDir.z == 0))
+			{
+				idle = true;
+			}
+			else
+			{
+				idle = false;
+			}
 
             if (m_CharacterController.isGrounded)
             {

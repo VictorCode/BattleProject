@@ -8,7 +8,7 @@ public class Pickup : MonoBehaviour
 	//use box collider to pickup or catch loose items
 	public void OnTriggerEnter(Collider other)
 	{
-		if(other.tag == "Item")
+		if(other.tag == "Item" && other.gameObject.GetComponent<Item>().isThrown == true)
 		{
 			other.gameObject.GetComponent<Item>().enabled = true;
 			other.gameObject.GetComponent<Item>().emitterCheck = false;

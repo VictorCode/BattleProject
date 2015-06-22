@@ -21,6 +21,7 @@ public class WIHolder : MonoBehaviour
 	public Transform hTransform;
 	private bool oldWeaponShow;
 	static public int changeId; //use to see if weapon/item has changed since last used
+	private IKHands hands;
 
 	void Start ()
 	{
@@ -38,7 +39,9 @@ public class WIHolder : MonoBehaviour
 		mWheelOld = 0.0f;
 		changeId = -100000;//increment up so more changes stored
 		wMax = character.getWeaponMax();
-		setupHolding(); // must be last thing to occur in Start
+		setupHolding(); // make sure occurs after appropriate initialization
+		hands = GameObject.Find("BodyModel").GetComponent<IKHands>();
+		hands.setHands(objects[1].name);
 	}
 	
 	void Update ()
@@ -163,10 +166,12 @@ public class WIHolder : MonoBehaviour
 			if(weaponShow)
 			{
 				showWeapon(weaponIndex);
+				hands.setHands(objects[weaponIndex].name);
 			}
 			else
 			{
 				showItem(itemIndex);
+				hands.setHands(objects[itemIndex + itemOffset].name);
 			}
 		}
 		

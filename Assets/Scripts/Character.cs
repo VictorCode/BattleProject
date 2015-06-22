@@ -37,19 +37,25 @@ public class Character : MonoBehaviour
 	private bool pregSoundPlayed;
 	private int hDangerThreshold;
 	private bool lhSoundPlaying;
+	private int walkingHash;
+	private int idleHash;
 	
 	//Reminder: the MainCamera object for the character must be named exactly "MainCamera" for items and weapons to find it
 	//must be used first in each character's Start function to initialize properly
 	public void CharacterStart()
 	{
-		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.lockState = CursorLockMode.Locked;	//cursor handling could be moved
 		Cursor.visible = false;
 		
 		this.gameObject.tag = "Player";
 		health = healthMax;
 		power = powerMax;
 		charMovement = GetComponent<CharacterMovement>();
-		anim = GetComponent<Animator>();
+		anim = GameObject.Find("BodyModel").GetComponent<Animator>();
+		walkingHash = Animator.StringToHash("walking");
+		idleHash = Animator.StringToHash("idle");
+		anim.SetBool(idleHash,false);
+		anim.SetBool(walkingHash,false);
 		timeSinceHit = 0.0f;
 		timeSincePow = 0.0f;
 		hregSoundPlayed = false;
@@ -118,6 +124,24 @@ public class Character : MonoBehaviour
 					pregSoundPlayed = false;
 				}
 			}
+		}
+		
+		//handle animation
+		if(Input.GetKey("w") && !Input.GetKey("left shift"))
+		{
+			anim.SetBool(walkingHash,true);
+			anim.SetBool(idleHash,false);
+		}
+		else if (Input.GetKey("w") && Input.GetKey("left shift"))
+		{
+			anim.SetBool(walkingHash,false);
+			anim.SetBool(idleHash,false);
+		}
+		else
+		{	
+			//idle
+			anim.SetBool(idleHash,true);
+			anim.SetBool(walkingHash,false);
 		}
 		
 	}
