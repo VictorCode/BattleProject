@@ -12,6 +12,7 @@ public class Item : MonoBehaviour
 	[SerializeField] protected bool isZoomable;
 	[SerializeField] private float zoomDist;
 	[SerializeField] public Sprite symbol;
+	[SerializeField] public Vector3 posOffset;
 	
 	public bool isThrown;
 	public int id;

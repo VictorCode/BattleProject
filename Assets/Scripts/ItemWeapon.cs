@@ -5,6 +5,7 @@ public class ItemWeapon : Item
 {
 	[SerializeField] private Texture2D crosshair;
 	[SerializeField] private Texture2D crosshairRed;
+	[SerializeField] private int range;
 	
 	private bool enemyDetect;
 	private Ray mouseRay;
@@ -37,6 +38,11 @@ public class ItemWeapon : Item
 		{
 			enemyDetect = false;
 		}
+	}
+	
+	public int getRange()
+	{
+		return this.range;
 	}
 	
 	void OnGUI()

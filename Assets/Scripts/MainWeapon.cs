@@ -11,6 +11,8 @@ public class MainWeapon : MonoBehaviour
 	[SerializeField] private Texture2D crosshair;
 	[SerializeField] private Texture2D crosshairRed;
 	[SerializeField] private float zoomDist;
+	[SerializeField] public Vector3 posOffset;
+	[SerializeField] private int range;
 	
 	protected Character character;
 	protected bool zooming;
@@ -23,7 +25,7 @@ public class MainWeapon : MonoBehaviour
 	private float normalFOV;
 	private float x;
 	private float y;
-
+	
 	//must be used first in each MainWeapon's Start function to initialize properly
 	public void MainWeaponStart()
 	{
@@ -78,6 +80,11 @@ public class MainWeapon : MonoBehaviour
 		}
 	}
 	
+	public int getRange()
+	{
+		return this.range;
+	}
+	
 	public void zoomIn()
 	{
 		if(isZoomable)
@@ -96,5 +103,4 @@ public class MainWeapon : MonoBehaviour
 			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,normalFOV,(t + .01f) * Time.deltaTime * 1500);
 		}
 	}
-	
 }

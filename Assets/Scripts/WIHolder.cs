@@ -22,6 +22,7 @@ public class WIHolder : MonoBehaviour
 	private bool oldWeaponShow;
 	static public int changeId; //use to see if weapon/item has changed since last used
 	private IKHands hands;
+	private Transform center;
 
 	void Start ()
 	{
@@ -29,6 +30,7 @@ public class WIHolder : MonoBehaviour
 		character = (Character) GameObject.FindObjectOfType(typeof(Character));
 		objects = new GameObject[character.getItemMax() + character.getWeaponMax() + 1];
 		itemOffset = character.getWeaponMax();
+		center = GameObject.Find("MainCamera/Center").transform;
 		weaponIndex = 1;
 		oldItemIndex = 1;
 		oldWeaponIndex = 1;
@@ -42,6 +44,7 @@ public class WIHolder : MonoBehaviour
 		setupHolding(); // make sure occurs after appropriate initialization
 		hands = GameObject.Find("BodyModel").GetComponent<IKHands>();
 		hands.setHands(objects[1].name);
+		this.transform.LookAt(center);
 	}
 	
 	void Update ()
@@ -160,6 +163,7 @@ public class WIHolder : MonoBehaviour
 			}
 		}
 		
+		//update item being shown if an index changes
 		if((itemIndex != oldItemIndex) || (weaponIndex != oldWeaponIndex) || (weaponShow != oldWeaponShow))
 		{
 			changeId++;
@@ -173,6 +177,7 @@ public class WIHolder : MonoBehaviour
 				showItem(itemIndex);
 				hands.setHands(objects[itemIndex + itemOffset].name);
 			}
+			this.transform.LookAt(center);
 		}
 		
 		oldItemIndex = itemIndex;
@@ -206,7 +211,10 @@ public class WIHolder : MonoBehaviour
 	private void showWeapon(int index)
 	{
 		hideAll();
-		objects[index].SetActive(true);	
+		objects[index].SetActive(true);
+		//make weapon look at center with appropriate range
+		center.localPosition = new Vector3(center.localPosition.x,center.localPosition.y,objects[index].GetComponent<MainWeapon>().getRange());
+		this.transform.localPosition = objects[index].GetComponent<MainWeapon>().posOffset;
 	}
 	
 	private void showItem(int index)
@@ -214,6 +222,14 @@ public class WIHolder : MonoBehaviour
 		index += itemOffset;
 		hideAll();
 		objects[index].SetActive(true);
+		this.transform.localPosition = objects[index].GetComponent<Item>().posOffset;
+		
+		//make weapon look at center with appropriate range if an actual ItemWeapon
+		ItemWeapon iw = objects[index].GetComponent<ItemWeapon>();
+		if(iw != null)
+		{
+			center.localPosition = new Vector3(center.localPosition.x,center.localPosition.y,iw.getRange());
+		}
 	}
 	
 	private void hideAll()
