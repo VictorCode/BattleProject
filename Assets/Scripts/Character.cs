@@ -39,6 +39,7 @@ public class Character : MonoBehaviour
 	private bool lhSoundPlaying;
 	private int walkingHash;
 	private int idleHash;
+	private int crouchingHash;
 	
 	//Reminder: the MainCamera object for the character must be named exactly "MainCamera" for items and weapons to find it
 	//must be used first in each character's Start function to initialize properly
@@ -54,8 +55,10 @@ public class Character : MonoBehaviour
 		anim = GameObject.Find("BodyModel").GetComponent<Animator>();
 		walkingHash = Animator.StringToHash("walking");
 		idleHash = Animator.StringToHash("idle");
+		crouchingHash = Animator.StringToHash("crouching");
 		anim.SetBool(idleHash,false);
 		anim.SetBool(walkingHash,false);
+		anim.SetBool(crouchingHash,false);
 		timeSinceHit = 0.0f;
 		timeSincePow = 0.0f;
 		hregSoundPlayed = false;
@@ -143,7 +146,6 @@ public class Character : MonoBehaviour
 			anim.SetBool(idleHash,true);
 			anim.SetBool(walkingHash,false);
 		}
-		
 	}
 	
 	public void hurt(int damage)

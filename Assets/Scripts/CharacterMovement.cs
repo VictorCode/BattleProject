@@ -46,6 +46,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
         private int jumps;
+		private Animator anim;
+		private int jumpHash;
 
         // Use this for initialization
         private void Start()
@@ -57,6 +59,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
+			anim = GameObject.Find("BodyModel").GetComponent<Animator>();
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
             m_FovKick.Setup(m_Camera);
             m_HeadBob.Setup(m_Camera, m_StepInterval);
@@ -66,6 +69,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
 			jumps = 0;
+			jumpHash = Animator.StringToHash("jump");
         }
 
         // Update is called once per frame
@@ -80,6 +84,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             
             if(m_Jump)
             {
+				anim.SetTrigger(jumpHash);
             	FixedUpdate();
             }
             

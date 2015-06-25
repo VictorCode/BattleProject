@@ -104,6 +104,7 @@
      <Compile Include="Assets\ImportedAssets\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\ImportedAssets\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\ImportedAssets\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\ImportedAssets\ToonBot\ToonBot(Free) Assets\Controller\RobotTestScriptFree.cs" />
      <Compile Include="Assets\Scripts\BlueChar.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\BulletHit.cs" />
@@ -130,10 +131,14 @@
      <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\Poof.cs" />
      <Compile Include="Assets\Scripts\WIHolder.cs" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
+     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\ImportedAssets\Standard Assets\Cameras\CameraGuidelines.txt" />
