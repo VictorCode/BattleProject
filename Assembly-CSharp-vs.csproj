@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ImportedAssets\Mixamo\Magic Pack\Demo\CameraScroll.cs" />
      <Compile Include="Assets\ImportedAssets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
      <Compile Include="Assets\ImportedAssets\Standard Assets\Cameras\Scripts\AutoCam.cs" />
      <Compile Include="Assets\ImportedAssets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
@@ -134,12 +135,14 @@
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\ImportedAssets\Mobility_01_Free_v2\Mobility_Free_Unity_Info.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\ImportedAssets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
      <None Include="Assets\ImportedAssets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\ImportedAssets\Standard Assets\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\ImportedAssets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

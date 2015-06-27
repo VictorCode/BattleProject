@@ -40,6 +40,12 @@ public class Character : MonoBehaviour
 	private int walkingHash;
 	private int idleHash;
 	private int crouchingHash;
+	private int backHash;
+	private int rightHash;
+	private int bSpeedHash;
+	protected int qpowHash;
+	protected int epowHash;
+	protected int fpowHash;
 	
 	//Reminder: the MainCamera object for the character must be named exactly "MainCamera" for items and weapons to find it
 	//must be used first in each character's Start function to initialize properly
@@ -56,9 +62,18 @@ public class Character : MonoBehaviour
 		walkingHash = Animator.StringToHash("walking");
 		idleHash = Animator.StringToHash("idle");
 		crouchingHash = Animator.StringToHash("crouching");
+		backHash = Animator.StringToHash("backward");
+		bSpeedHash = Animator.StringToHash("backSpeed");
+		rightHash = Animator.StringToHash("right");
+		qpowHash = Animator.StringToHash("qpower");
+		epowHash = Animator.StringToHash("epower");
+		fpowHash = Animator.StringToHash("fpower");
 		anim.SetBool(idleHash,false);
 		anim.SetBool(walkingHash,false);
 		anim.SetBool(crouchingHash,false);
+		anim.SetBool(backHash,false);
+		anim.SetFloat(rightHash,.5f);
+		anim.SetFloat(bSpeedHash,0.0f);
 		timeSinceHit = 0.0f;
 		timeSincePow = 0.0f;
 		hregSoundPlayed = false;
@@ -130,21 +145,94 @@ public class Character : MonoBehaviour
 		}
 		
 		//handle animation
-		if(Input.GetKey("w") && !Input.GetKey("left shift"))
+		if(Input.GetKey("w")) //moving forward
 		{
-			anim.SetBool(walkingHash,true);
 			anim.SetBool(idleHash,false);
+			anim.SetFloat(bSpeedHash,0.0f);
+			anim.SetBool(backHash,false);
+			if(Input.GetKey("left shift")) // forward sprinting
+			{
+				anim.SetBool(walkingHash,false);
+				if(Input.GetKey("a"))
+				{
+					anim.SetFloat(rightHash,.25f);
+				}
+				else if(Input.GetKey("d"))
+				{
+					anim.SetFloat(rightHash,.75f);
+				}
+				else
+				{
+					anim.SetFloat(rightHash,.5f);
+				}
+			}
+			else
+			{
+				anim.SetBool(walkingHash,true);
+				if(Input.GetKey("a"))
+				{
+					anim.SetFloat(rightHash,.25f);
+				}
+				else if(Input.GetKey("d"))
+				{
+					anim.SetFloat(rightHash,.75f);
+				}
+				else
+				{
+					anim.SetFloat(rightHash,.5f);
+				}
+			}
 		}
-		else if (Input.GetKey("w") && Input.GetKey("left shift"))
+		else if(Input.GetKey("s")) //moving backwards
 		{
+			anim.SetBool(backHash,true);
+			anim.SetBool(idleHash,false);
 			anim.SetBool(walkingHash,false);
-			anim.SetBool(idleHash,false);
+			if(Input.GetKey("left shift"))
+			{
+				anim.SetFloat(bSpeedHash,1.0f);
+			}
+			else
+			{
+				anim.SetFloat(bSpeedHash,.5f);
+			}
 		}
-		else
-		{	
-			//idle
+		else if(Input.GetKey("a")) //moving just left
+		{
+			anim.SetFloat(rightHash,0.0f);
+			anim.SetBool(idleHash,false);
+			anim.SetFloat(bSpeedHash,0.0f);
+			anim.SetBool(backHash,false);
+			if(Input.GetKey("left shift"))
+			{
+				anim.SetBool(walkingHash,false);
+			}
+			else
+			{
+				anim.SetBool(walkingHash,true);
+			}
+		}
+		else if(Input.GetKey("d")) //moving just right
+		{
+			anim.SetFloat(rightHash,1.0f);
+			anim.SetBool(idleHash,false);
+			anim.SetFloat(bSpeedHash,0.0f);
+			anim.SetBool(backHash,false);
+			if(Input.GetKey("left shift"))
+			{
+				anim.SetBool(walkingHash,false);
+			}
+			else
+			{
+				anim.SetBool(walkingHash,true);
+			}
+		}
+		else //idle
+		{
 			anim.SetBool(idleHash,true);
 			anim.SetBool(walkingHash,false);
+			anim.SetFloat(bSpeedHash,0.0f);
+			anim.SetBool(backHash,false);
 		}
 	}
 	

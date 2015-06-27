@@ -48,6 +48,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private int jumps;
 		private Animator anim;
 		private int jumpHash;
+		private int groundHash;
 
         // Use this for initialization
         private void Start()
@@ -70,6 +71,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
 			jumps = 0;
 			jumpHash = Animator.StringToHash("jump");
+			groundHash = Animator.StringToHash("ground");
         }
 
         // Update is called once per frame
@@ -95,6 +97,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = 0f;
                 m_Jumping = false;
                 jumps = 0;
+                anim.SetTrigger(groundHash);
             }
             if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
             {
