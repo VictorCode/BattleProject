@@ -1,144 +1,144 @@
 fileFormatVersion: 2
-guid: 6c160152ac394474899779ba7d2aea38
-timeCreated: 1435359835
+guid: cf95bb74090b146a2baca3949c1c55ba
+timeCreated: 1435430582
 licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: male_Hi
-    100002: MaleBaseMesh:Head
-    100004: MaleBaseMesh:HeadTop_End
-    100006: MaleBaseMesh:Hips
-    100008: MaleBaseMesh:LeftArm
-    100010: MaleBaseMesh:LeftFoot
-    100012: MaleBaseMesh:LeftForeArm
-    100014: MaleBaseMesh:LeftHand
-    100016: MaleBaseMesh:LeftHandIndex1
-    100018: MaleBaseMesh:LeftHandIndex2
-    100020: MaleBaseMesh:LeftHandIndex3
-    100022: MaleBaseMesh:LeftHandIndex4
-    100024: MaleBaseMesh:LeftHandMiddle1
-    100026: MaleBaseMesh:LeftHandMiddle2
-    100028: MaleBaseMesh:LeftHandMiddle3
-    100030: MaleBaseMesh:LeftHandMiddle4
-    100032: MaleBaseMesh:LeftHandPinky1
-    100034: MaleBaseMesh:LeftHandPinky2
-    100036: MaleBaseMesh:LeftHandPinky3
-    100038: MaleBaseMesh:LeftHandPinky4
-    100040: MaleBaseMesh:LeftHandRing1
-    100042: MaleBaseMesh:LeftHandRing2
-    100044: MaleBaseMesh:LeftHandRing3
-    100046: MaleBaseMesh:LeftHandRing4
-    100048: MaleBaseMesh:LeftHandThumb1
-    100050: MaleBaseMesh:LeftHandThumb2
-    100052: MaleBaseMesh:LeftHandThumb3
-    100054: MaleBaseMesh:LeftHandThumb4
-    100056: MaleBaseMesh:LeftLeg
-    100058: MaleBaseMesh:LeftShoulder
-    100060: MaleBaseMesh:LeftToe_End
-    100062: MaleBaseMesh:LeftToeBase
-    100064: MaleBaseMesh:LeftUpLeg
-    100066: MaleBaseMesh:Neck
-    100068: MaleBaseMesh:RightArm
-    100070: MaleBaseMesh:RightFoot
-    100072: MaleBaseMesh:RightForeArm
-    100074: MaleBaseMesh:RightHand
-    100076: MaleBaseMesh:RightHandIndex1
-    100078: MaleBaseMesh:RightHandIndex2
-    100080: MaleBaseMesh:RightHandIndex3
-    100082: MaleBaseMesh:RightHandIndex4
-    100084: MaleBaseMesh:RightHandMiddle1
-    100086: MaleBaseMesh:RightHandMiddle2
-    100088: MaleBaseMesh:RightHandMiddle3
-    100090: MaleBaseMesh:RightHandMiddle4
-    100092: MaleBaseMesh:RightHandPinky1
-    100094: MaleBaseMesh:RightHandPinky2
-    100096: MaleBaseMesh:RightHandPinky3
-    100098: MaleBaseMesh:RightHandPinky4
-    100100: MaleBaseMesh:RightHandRing1
-    100102: MaleBaseMesh:RightHandRing2
-    100104: MaleBaseMesh:RightHandRing3
-    100106: MaleBaseMesh:RightHandRing4
-    100108: MaleBaseMesh:RightHandThumb1
-    100110: MaleBaseMesh:RightHandThumb2
-    100112: MaleBaseMesh:RightHandThumb3
-    100114: MaleBaseMesh:RightHandThumb4
-    100116: MaleBaseMesh:RightLeg
-    100118: MaleBaseMesh:RightShoulder
-    100120: MaleBaseMesh:RightToe_End
-    100122: MaleBaseMesh:RightToeBase
-    100124: MaleBaseMesh:RightUpLeg
-    100126: MaleBaseMesh:Spine
-    100128: MaleBaseMesh:Spine1
-    100130: MaleBaseMesh:Spine2
-    100132: //RootNode
-    400000: male_Hi
-    400002: MaleBaseMesh:Head
-    400004: MaleBaseMesh:HeadTop_End
-    400006: MaleBaseMesh:Hips
-    400008: MaleBaseMesh:LeftArm
-    400010: MaleBaseMesh:LeftFoot
-    400012: MaleBaseMesh:LeftForeArm
-    400014: MaleBaseMesh:LeftHand
-    400016: MaleBaseMesh:LeftHandIndex1
-    400018: MaleBaseMesh:LeftHandIndex2
-    400020: MaleBaseMesh:LeftHandIndex3
-    400022: MaleBaseMesh:LeftHandIndex4
-    400024: MaleBaseMesh:LeftHandMiddle1
-    400026: MaleBaseMesh:LeftHandMiddle2
-    400028: MaleBaseMesh:LeftHandMiddle3
-    400030: MaleBaseMesh:LeftHandMiddle4
-    400032: MaleBaseMesh:LeftHandPinky1
-    400034: MaleBaseMesh:LeftHandPinky2
-    400036: MaleBaseMesh:LeftHandPinky3
-    400038: MaleBaseMesh:LeftHandPinky4
-    400040: MaleBaseMesh:LeftHandRing1
-    400042: MaleBaseMesh:LeftHandRing2
-    400044: MaleBaseMesh:LeftHandRing3
-    400046: MaleBaseMesh:LeftHandRing4
-    400048: MaleBaseMesh:LeftHandThumb1
-    400050: MaleBaseMesh:LeftHandThumb2
-    400052: MaleBaseMesh:LeftHandThumb3
-    400054: MaleBaseMesh:LeftHandThumb4
-    400056: MaleBaseMesh:LeftLeg
-    400058: MaleBaseMesh:LeftShoulder
-    400060: MaleBaseMesh:LeftToe_End
-    400062: MaleBaseMesh:LeftToeBase
-    400064: MaleBaseMesh:LeftUpLeg
-    400066: MaleBaseMesh:Neck
-    400068: MaleBaseMesh:RightArm
-    400070: MaleBaseMesh:RightFoot
-    400072: MaleBaseMesh:RightForeArm
-    400074: MaleBaseMesh:RightHand
-    400076: MaleBaseMesh:RightHandIndex1
-    400078: MaleBaseMesh:RightHandIndex2
-    400080: MaleBaseMesh:RightHandIndex3
-    400082: MaleBaseMesh:RightHandIndex4
-    400084: MaleBaseMesh:RightHandMiddle1
-    400086: MaleBaseMesh:RightHandMiddle2
-    400088: MaleBaseMesh:RightHandMiddle3
-    400090: MaleBaseMesh:RightHandMiddle4
-    400092: MaleBaseMesh:RightHandPinky1
-    400094: MaleBaseMesh:RightHandPinky2
-    400096: MaleBaseMesh:RightHandPinky3
-    400098: MaleBaseMesh:RightHandPinky4
-    400100: MaleBaseMesh:RightHandRing1
-    400102: MaleBaseMesh:RightHandRing2
-    400104: MaleBaseMesh:RightHandRing3
-    400106: MaleBaseMesh:RightHandRing4
-    400108: MaleBaseMesh:RightHandThumb1
-    400110: MaleBaseMesh:RightHandThumb2
-    400112: MaleBaseMesh:RightHandThumb3
-    400114: MaleBaseMesh:RightHandThumb4
-    400116: MaleBaseMesh:RightLeg
-    400118: MaleBaseMesh:RightShoulder
-    400120: MaleBaseMesh:RightToe_End
-    400122: MaleBaseMesh:RightToeBase
-    400124: MaleBaseMesh:RightUpLeg
-    400126: MaleBaseMesh:Spine
-    400128: MaleBaseMesh:Spine1
-    400130: MaleBaseMesh:Spine2
-    400132: //RootNode
+    100000: //RootNode
+    100002: male_Hi
+    100004: MaleBaseMesh:Head
+    100006: MaleBaseMesh:HeadTop_End
+    100008: MaleBaseMesh:Hips
+    100010: MaleBaseMesh:LeftArm
+    100012: MaleBaseMesh:LeftFoot
+    100014: MaleBaseMesh:LeftForeArm
+    100016: MaleBaseMesh:LeftHand
+    100018: MaleBaseMesh:LeftHandIndex1
+    100020: MaleBaseMesh:LeftHandIndex2
+    100022: MaleBaseMesh:LeftHandIndex3
+    100024: MaleBaseMesh:LeftHandIndex4
+    100026: MaleBaseMesh:LeftHandMiddle1
+    100028: MaleBaseMesh:LeftHandMiddle2
+    100030: MaleBaseMesh:LeftHandMiddle3
+    100032: MaleBaseMesh:LeftHandMiddle4
+    100034: MaleBaseMesh:LeftHandPinky1
+    100036: MaleBaseMesh:LeftHandPinky2
+    100038: MaleBaseMesh:LeftHandPinky3
+    100040: MaleBaseMesh:LeftHandPinky4
+    100042: MaleBaseMesh:LeftHandRing1
+    100044: MaleBaseMesh:LeftHandRing2
+    100046: MaleBaseMesh:LeftHandRing3
+    100048: MaleBaseMesh:LeftHandRing4
+    100050: MaleBaseMesh:LeftHandThumb1
+    100052: MaleBaseMesh:LeftHandThumb2
+    100054: MaleBaseMesh:LeftHandThumb3
+    100056: MaleBaseMesh:LeftHandThumb4
+    100058: MaleBaseMesh:LeftLeg
+    100060: MaleBaseMesh:LeftShoulder
+    100062: MaleBaseMesh:LeftToe_End
+    100064: MaleBaseMesh:LeftToeBase
+    100066: MaleBaseMesh:LeftUpLeg
+    100068: MaleBaseMesh:Neck
+    100070: MaleBaseMesh:RightArm
+    100072: MaleBaseMesh:RightFoot
+    100074: MaleBaseMesh:RightForeArm
+    100076: MaleBaseMesh:RightHand
+    100078: MaleBaseMesh:RightHandIndex1
+    100080: MaleBaseMesh:RightHandIndex2
+    100082: MaleBaseMesh:RightHandIndex3
+    100084: MaleBaseMesh:RightHandIndex4
+    100086: MaleBaseMesh:RightHandMiddle1
+    100088: MaleBaseMesh:RightHandMiddle2
+    100090: MaleBaseMesh:RightHandMiddle3
+    100092: MaleBaseMesh:RightHandMiddle4
+    100094: MaleBaseMesh:RightHandPinky1
+    100096: MaleBaseMesh:RightHandPinky2
+    100098: MaleBaseMesh:RightHandPinky3
+    100100: MaleBaseMesh:RightHandPinky4
+    100102: MaleBaseMesh:RightHandRing1
+    100104: MaleBaseMesh:RightHandRing2
+    100106: MaleBaseMesh:RightHandRing3
+    100108: MaleBaseMesh:RightHandRing4
+    100110: MaleBaseMesh:RightHandThumb1
+    100112: MaleBaseMesh:RightHandThumb2
+    100114: MaleBaseMesh:RightHandThumb3
+    100116: MaleBaseMesh:RightHandThumb4
+    100118: MaleBaseMesh:RightLeg
+    100120: MaleBaseMesh:RightShoulder
+    100122: MaleBaseMesh:RightToe_End
+    100124: MaleBaseMesh:RightToeBase
+    100126: MaleBaseMesh:RightUpLeg
+    100128: MaleBaseMesh:Spine
+    100130: MaleBaseMesh:Spine1
+    100132: MaleBaseMesh:Spine2
+    400000: //RootNode
+    400002: male_Hi
+    400004: MaleBaseMesh:Head
+    400006: MaleBaseMesh:HeadTop_End
+    400008: MaleBaseMesh:Hips
+    400010: MaleBaseMesh:LeftArm
+    400012: MaleBaseMesh:LeftFoot
+    400014: MaleBaseMesh:LeftForeArm
+    400016: MaleBaseMesh:LeftHand
+    400018: MaleBaseMesh:LeftHandIndex1
+    400020: MaleBaseMesh:LeftHandIndex2
+    400022: MaleBaseMesh:LeftHandIndex3
+    400024: MaleBaseMesh:LeftHandIndex4
+    400026: MaleBaseMesh:LeftHandMiddle1
+    400028: MaleBaseMesh:LeftHandMiddle2
+    400030: MaleBaseMesh:LeftHandMiddle3
+    400032: MaleBaseMesh:LeftHandMiddle4
+    400034: MaleBaseMesh:LeftHandPinky1
+    400036: MaleBaseMesh:LeftHandPinky2
+    400038: MaleBaseMesh:LeftHandPinky3
+    400040: MaleBaseMesh:LeftHandPinky4
+    400042: MaleBaseMesh:LeftHandRing1
+    400044: MaleBaseMesh:LeftHandRing2
+    400046: MaleBaseMesh:LeftHandRing3
+    400048: MaleBaseMesh:LeftHandRing4
+    400050: MaleBaseMesh:LeftHandThumb1
+    400052: MaleBaseMesh:LeftHandThumb2
+    400054: MaleBaseMesh:LeftHandThumb3
+    400056: MaleBaseMesh:LeftHandThumb4
+    400058: MaleBaseMesh:LeftLeg
+    400060: MaleBaseMesh:LeftShoulder
+    400062: MaleBaseMesh:LeftToe_End
+    400064: MaleBaseMesh:LeftToeBase
+    400066: MaleBaseMesh:LeftUpLeg
+    400068: MaleBaseMesh:Neck
+    400070: MaleBaseMesh:RightArm
+    400072: MaleBaseMesh:RightFoot
+    400074: MaleBaseMesh:RightForeArm
+    400076: MaleBaseMesh:RightHand
+    400078: MaleBaseMesh:RightHandIndex1
+    400080: MaleBaseMesh:RightHandIndex2
+    400082: MaleBaseMesh:RightHandIndex3
+    400084: MaleBaseMesh:RightHandIndex4
+    400086: MaleBaseMesh:RightHandMiddle1
+    400088: MaleBaseMesh:RightHandMiddle2
+    400090: MaleBaseMesh:RightHandMiddle3
+    400092: MaleBaseMesh:RightHandMiddle4
+    400094: MaleBaseMesh:RightHandPinky1
+    400096: MaleBaseMesh:RightHandPinky2
+    400098: MaleBaseMesh:RightHandPinky3
+    400100: MaleBaseMesh:RightHandPinky4
+    400102: MaleBaseMesh:RightHandRing1
+    400104: MaleBaseMesh:RightHandRing2
+    400106: MaleBaseMesh:RightHandRing3
+    400108: MaleBaseMesh:RightHandRing4
+    400110: MaleBaseMesh:RightHandThumb1
+    400112: MaleBaseMesh:RightHandThumb2
+    400114: MaleBaseMesh:RightHandThumb3
+    400116: MaleBaseMesh:RightHandThumb4
+    400118: MaleBaseMesh:RightLeg
+    400120: MaleBaseMesh:RightShoulder
+    400122: MaleBaseMesh:RightToe_End
+    400124: MaleBaseMesh:RightToeBase
+    400126: MaleBaseMesh:RightUpLeg
+    400128: MaleBaseMesh:Spine
+    400130: MaleBaseMesh:Spine1
+    400132: MaleBaseMesh:Spine2
     4300000: male_Hi
     7400000: mixamo.com
     9500000: //RootNode
@@ -153,8 +153,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 'MuscleClip ''sitting_drinking'' conversion warning:
-      ''MaleBaseMesh:Hips/MaleBaseMesh:Spine/MaleBaseMesh:Spine1/MaleBaseMesh:Spine2''
+    animationImportWarnings: 'MuscleClip ''gunplay'' conversion warning: ''MaleBaseMesh:Hips/MaleBaseMesh:Spine/MaleBaseMesh:Spine1/MaleBaseMesh:Spine2''
       is between humanoid transforms and has rotation animation. This might lower
       retargeting quality.
 
@@ -172,8 +171,8 @@ ModelImporter:
     - serializedVersion: 16
       name: mixamo.com
       takeName: mixamo.com
-      firstFrame: 227
-      lastFrame: 270
+      firstFrame: 0
+      lastFrame: .100000001
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -189,7 +188,7 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 00000000000000000000000000000000000000000000000001000000000000000100000000000000000000000000000000000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
       transformMask:
@@ -765,7 +764,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: sitting_drinking(Clone)
+    - name: gunplay(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -776,329 +775,329 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:Hips
-      position: {x: -.000998058473, y: 1.07055497, z: -.00176065951}
-      rotation: {x: -.481665462, y: .468149245, z: -.531249344, w: .516341805}
-      scale: {x: .99999994, y: .999999821, z: 1}
+      position: {x: .00240093283, y: 1.07055509, z: .000100739744}
+      rotation: {x: -.481665462, y: .468149245, z: -.531249344, w: .516341746}
+      scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:Spine
       position: {x: -.0946910381, y: -3.10862448e-17, z: -3.83026942e-17}
-      rotation: {x: -5.96046448e-08, y: 5.96046448e-08, z: -.00163626671, w: .999998689}
-      scale: {x: .99999994, y: 1, z: .999999821}
+      rotation: {x: -7.4505806e-08, y: 0, z: -.0016361922, w: .999998748}
+      scale: {x: .99999994, y: 1, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:Spine1
       position: {x: -.0990836248, y: 1.33226755e-16, z: -2.04976758e-10}
-      rotation: {x: -7.45057989e-08, y: 0, z: 1.49011594e-08, w: 1}
-      scale: {x: 1.00000012, y: 1.00000024, z: 1.00000036}
+      rotation: {x: 5.96046377e-08, y: 2.98023188e-08, z: -2.98023188e-08, w: 1}
+      scale: {x: .999999881, y: .999999881, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:Spine2
       position: {x: -.113238387, y: 7.68776778e-11, z: -2.36429015e-10}
-      rotation: {x: -.020232141, y: -.000842958689, z: -.00990992785, w: .999745905}
-      scale: {x: .999999821, y: 1, z: 1}
+      rotation: {x: -.0202321988, y: -.000842988375, z: -.00990988221, w: .999745846}
+      scale: {x: .99999994, y: .999999881, z: .999999762}
       transformModified: 1
     - name: MaleBaseMesh:Neck
       position: {x: -.133704081, y: 1.95399251e-16, z: -2.10942372e-17}
-      rotation: {x: -.0286019742, y: .0017837137, z: .113548055, w: .99311918}
-      scale: {x: .99999994, y: .999999762, z: .999999881}
+      rotation: {x: -.0286020599, y: .00178368366, z: .11354804, w: .993119121}
+      scale: {x: 1.00000012, y: .999999821, z: 1.00000024}
       transformModified: 1
     - name: MaleBaseMesh:Head
       position: {x: -.100656949, y: 3.5527136e-17, z: 8.67361738e-19}
-      rotation: {x: 2.98023188e-08, y: -2.98023188e-08, z: -.0225920361, w: .999744833}
-      scale: {x: .999999642, y: .999999881, z: .999999821}
+      rotation: {x: 1.04308128e-07, y: 0, z: -.0225921869, w: .999744773}
+      scale: {x: .999999821, y: 1, z: .999999762}
       transformModified: 1
     - name: MaleBaseMesh:HeadTop_End
       position: {x: -.180315599, y: 1.42108544e-16, z: -2.55855587e-10}
-      rotation: {x: -5.96046306e-08, y: 0, z: -2.98023153e-08, w: 1}
-      scale: {x: 1.00000012, y: 1, z: 1}
+      rotation: {x: -2.98023224e-08, y: -1.49011612e-08, z: 2.98023224e-08, w: 1}
+      scale: {x: 1, y: 1.00000012, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:LeftShoulder
       position: {x: -.0917023644, y: -.00422885595, z: -.0614727587}
-      rotation: {x: .479267776, y: -.491595089, z: .546068966, w: .480047226}
-      scale: {x: .999999762, y: .99999994, z: .999999702}
+      rotation: {x: .479267716, y: -.491595119, z: .546069026, w: .480047256}
+      scale: {x: 1, y: 1, z: .999999881}
       transformModified: 1
     - name: MaleBaseMesh:LeftArm
       position: {x: -.123841964, y: 2.84217088e-16, z: -4.440892e-18}
-      rotation: {x: .00038743054, y: .00378158502, z: .0024215146, w: .999989927}
-      scale: {x: .999999821, y: 1.00000036, z: 1}
+      rotation: {x: .000387316861, y: .00378170796, z: .00242138398, w: .999989927}
+      scale: {x: .99999994, y: .99999994, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:LeftForeArm
       position: {x: -.280310601, y: -5.68434176e-16, z: 8.88178367e-17}
-      rotation: {x: -.000294844649, y: -.00556946872, z: -.0489150733, w: .998787403}
-      scale: {x: 1, y: 1, z: 1}
+      rotation: {x: -.000294835976, y: -.00556952041, z: -.0489152484, w: .998787344}
+      scale: {x: .999999881, y: 1, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:LeftHand
       position: {x: -.27268064, y: 0, z: 1.3322676e-17}
-      rotation: {x: -2.3246681e-08, y: 4.65576875e-08, z: -7.98412216e-08, w: 1}
-      scale: {x: 1, y: .999999881, z: 1}
+      rotation: {x: -3.81926348e-08, y: -2.45985046e-08, z: -5.55569324e-09, w: 1}
+      scale: {x: 1.00000024, y: 1.00000012, z: 1.00000036}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandThumb1
       position: {x: -.0364690386, y: -.00849163532, z: .0277941171}
-      rotation: {x: .69275558, y: .283199072, z: -.256288677, w: .61172235}
-      scale: {x: .999999762, y: 1, z: .999999762}
+      rotation: {x: .692756176, y: .283198953, z: -.256287187, w: .611722291}
+      scale: {x: .999999881, y: .999999881, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandThumb2
       position: {x: -.0372417718, y: -1.42108544e-16, z: -5.68434176e-16}
-      rotation: {x: -.702717364, y: .0217123814, z: .0250644013, w: .710695982}
-      scale: {x: 1.00000024, y: 1, z: .99999994}
+      rotation: {x: -.702717543, y: .0217122622, z: .025063524, w: .710695684}
+      scale: {x: .999999762, y: .999999642, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandThumb3
       position: {x: -.0276608076, y: -2.84217088e-16, z: 0}
-      rotation: {x: -.0159522649, y: -.0234361012, z: .0214900281, w: .999367058}
-      scale: {x: 1, y: .99999994, z: 1}
+      rotation: {x: -.0159523282, y: -.0234359689, z: .0214901865, w: .999367058}
+      scale: {x: 1.00000012, y: 1.00000024, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandThumb4
       position: {x: -.025120968, y: 0, z: 1.42108544e-16}
-      rotation: {x: -4.47034694e-08, y: -5.96046235e-08, z: -9.31322219e-08, w: 1}
-      scale: {x: 1, y: 1.00000012, z: 1}
+      rotation: {x: -2.23517347e-08, y: -5.96046235e-08, z: -1.11758673e-08, w: 1}
+      scale: {x: .999999642, y: .99999994, z: 1.00000012}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandIndex1
       position: {x: -.107370771, y: .00163331837, z: .0361857638}
-      rotation: {x: .0226001535, y: .0402373262, z: -.0290995333, w: .998510659}
-      scale: {x: 1.00000012, y: 1, z: 1.00000012}
+      rotation: {x: .0226000194, y: .0402373224, z: -.0290995557, w: .998510599}
+      scale: {x: .999999821, y: .999999821, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandIndex2
       position: {x: -.0280353706, y: 0, z: 1.7763568e-17}
-      rotation: {x: .0006496844, y: -.0285528414, z: .0296248104, w: .999153018}
-      scale: {x: 1, y: 1, z: 1}
+      rotation: {x: .000650030619, y: -.0285522025, z: .029623596, w: .999153018}
+      scale: {x: 1, y: 1, z: .999999762}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandIndex3
       position: {x: -.02766384, y: -5.68434176e-16, z: -3.5527136e-17}
-      rotation: {x: -.000177018694, y: -.00363395503, z: .0220715981, w: .999749839}
-      scale: {x: .99999994, y: .999999762, z: 1}
+      rotation: {x: -.00017704624, y: -.00363379437, z: .0220715813, w: .999749839}
+      scale: {x: .999999821, y: .999999881, z: 1.00000012}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandIndex4
       position: {x: -.0254435167, y: 2.84217088e-16, z: 8.881784e-18}
-      rotation: {x: 2.632577e-08, y: 6.92670898e-09, z: -2.25438637e-08, w: 1}
-      scale: {x: .99999994, y: .999999881, z: 1}
+      rotation: {x: 2.11650732e-08, y: -3.77185536e-08, z: 9.96514942e-08, w: 1}
+      scale: {x: 1, y: 1, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandMiddle1
       position: {x: -.109264217, y: .00515151955, z: .0125945611}
-      rotation: {x: .0125762578, y: .00729473913, z: -.00670827506, w: .99987179}
-      scale: {x: 1.00000048, y: 1.00000024, z: 1.00000012}
+      rotation: {x: .0125762094, y: .007294802, z: -.00670834258, w: .99987185}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000024}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandMiddle2
       position: {x: -.0294871517, y: 0, z: 5.3290704e-17}
-      rotation: {x: 7.12455439e-05, y: .00662407512, z: .02046635, w: .999768615}
-      scale: {x: .999999464, y: .999999523, z: .999999821}
+      rotation: {x: 7.13140616e-05, y: .00662390143, z: .0204663649, w: .999768615}
+      scale: {x: .999999642, y: .999999821, z: .999999762}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandMiddle3
       position: {x: -.0296484604, y: 2.84217088e-16, z: 0}
-      rotation: {x: -.000243709263, y: -.00454455381, z: .0168415122, w: .999847829}
-      scale: {x: 1.00000024, y: 1.00000024, z: 1.00000036}
+      rotation: {x: -.000243696151, y: -.00454453891, z: .0168416481, w: .999847829}
+      scale: {x: 1.00000024, y: 1.00000048, z: 1.00000024}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandMiddle4
       position: {x: -.028103577, y: 0, z: -1.7763568e-17}
-      rotation: {x: 5.55301014e-08, y: -1.55123399e-08, z: 9.75269216e-08, w: 1}
-      scale: {x: .999999642, y: .999999523, z: 1}
+      rotation: {x: 2.8056089e-08, y: 1.1461087e-07, z: -8.73842421e-09, w: 1}
+      scale: {x: .999999881, y: .999999702, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandRing1
       position: {x: -.109457783, y: .00600472512, z: -.0117182862}
-      rotation: {x: -.0287270006, y: .0172829758, z: -.038346909, w: .99870199}
-      scale: {x: .999999702, y: .999999702, z: 1}
+      rotation: {x: -.0287270881, y: .0172830094, z: -.0383469723, w: .99870193}
+      scale: {x: 1, y: 1, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandRing2
       position: {x: -.027187204, y: 0, z: 1.27675642e-17}
-      rotation: {x: 7.10150607e-06, y: -.00508528436, z: .0396949649, w: .999198914}
-      scale: {x: 1.00000036, y: .999999881, z: 1.00000012}
+      rotation: {x: 7.35744561e-06, y: -.00508501474, z: .0396902636, w: .999199092}
+      scale: {x: .999999881, y: 1, z: 1.00000024}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandRing3
       position: {x: -.0234031975, y: -2.84217088e-16, z: -4.440892e-18}
-      rotation: {x: 6.68766297e-05, y: -.000418753974, z: .0204160567, w: .999791503}
-      scale: {x: 1.00000024, y: 1.00000012, z: 1}
+      rotation: {x: 6.66951382e-05, y: -.000418859679, z: .0204161052, w: .999791503}
+      scale: {x: 1.00000012, y: 1.00000024, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandRing4
       position: {x: -.0239158403, y: -2.84217088e-16, z: -1.99840136e-17}
-      rotation: {x: -1.25146427e-08, y: -1.92900117e-07, z: -2.77068359e-08, w: 1}
-      scale: {x: .99999994, y: .999999881, z: .99999994}
+      rotation: {x: 9.68575335e-08, y: 1.55996513e-08, z: -8.05593956e-08, w: 1}
+      scale: {x: .999999881, y: 1, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandPinky1
       position: {x: -.10630969, y: .00318496488, z: -.0335098915}
-      rotation: {x: -.00903572515, y: -.00243164808, z: -.0122936182, w: .999880672}
-      scale: {x: 1, y: .999999881, z: .99999994}
+      rotation: {x: -.0090358071, y: -.00243149581, z: -.0122936731, w: .999880731}
+      scale: {x: 1, y: .999999881, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandPinky2
       position: {x: -.0239577387, y: 2.84217088e-16, z: -1.3322676e-17}
-      rotation: {x: -.000287841947, y: .0306654144, z: .0114956284, w: .999463558}
-      scale: {x: .99999994, y: .99999994, z: .999999762}
+      rotation: {x: -.000287750125, y: .0306652244, z: .0114957634, w: .999463618}
+      scale: {x: .999999821, y: .999999821, z: .999999881}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandPinky3
       position: {x: -.0212548487, y: 0, z: 3.5527136e-17}
-      rotation: {x: 9.12599717e-05, y: .00476877065, z: .0164770968, w: .999852896}
-      scale: {x: 1.00000012, y: 1.00000024, z: .99999994}
+      rotation: {x: 9.13053882e-05, y: .00476877019, z: .0164770819, w: .999852955}
+      scale: {x: 1.00000048, y: 1.00000036, z: .999999881}
       transformModified: 1
     - name: MaleBaseMesh:LeftHandPinky4
       position: {x: -.0208456814, y: 0, z: 0}
-      rotation: {x: 3.02679801e-08, y: -4.90399499e-09, z: 7.18573503e-08, w: 1}
-      scale: {x: .999999762, y: .999999762, z: .999999881}
+      rotation: {x: 1.83354061e-08, y: 3.32365637e-08, z: -1.01863373e-09, w: 1}
+      scale: {x: .999999821, y: .999999762, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:RightShoulder
       position: {x: -.0920651928, y: .00280256197, z: .0612190031}
-      rotation: {x: -.507558823, y: .520614088, z: .515630066, w: .453288913}
-      scale: {x: .999999702, y: .999999762, z: .999999881}
+      rotation: {x: -.507558823, y: .520614028, z: .515629947, w: .453288883}
+      scale: {x: 1, y: 1.0000006, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:RightArm
       position: {x: -.123841964, y: -2.84217088e-16, z: 3.15303335e-15}
-      rotation: {x: -.000387909153, y: -.00378162507, z: .0024216352, w: .999989927}
-      scale: {x: .999999583, y: 1, z: .999999821}
+      rotation: {x: -.000387710927, y: -.0037815515, z: .00242152764, w: .999989927}
+      scale: {x: .999999821, y: .99999994, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:RightForeArm
       position: {x: -.280310601, y: -5.68434176e-16, z: -1.02140514e-16}
-      rotation: {x: .000296685728, y: .00556941004, z: -.0489152595, w: .998787403}
-      scale: {x: 1.00000012, y: 1, z: 1}
+      rotation: {x: .000296626618, y: .00556935649, z: -.0489152335, w: .998787403}
+      scale: {x: 1.00000024, y: .999999881, z: 1.00000072}
       transformModified: 1
     - name: MaleBaseMesh:RightHand
       position: {x: -.27268064, y: 2.84217088e-16, z: 2.22044592e-17}
-      rotation: {x: -6.15471905e-08, y: -2.41993039e-08, z: 5.28525383e-08, w: 1}
-      scale: {x: 1.00000024, y: 1.00000024, z: 1.00000048}
+      rotation: {x: 1.87808329e-08, y: -4.26483489e-08, z: -3.39932669e-08, w: 1}
+      scale: {x: 1.00000012, y: .99999994, z: .999999881}
       transformModified: 1
     - name: MaleBaseMesh:RightHandThumb1
       position: {x: -.0364690386, y: -.00849173591, z: -.0277940854}
-      rotation: {x: -.692757607, y: -.283199042, z: -.256289005, w: .611719966}
-      scale: {x: .999999642, y: .999999881, z: .999999702}
+      rotation: {x: -.69275707, y: -.28319931, z: -.256289929, w: .611719966}
+      scale: {x: 1.00000024, y: 1, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:RightHandThumb2
       position: {x: -.0372417718, y: 1.42108544e-16, z: 0}
-      rotation: {x: .702719927, y: -.0217088498, z: .025063416, w: .710693538}
-      scale: {x: 1.00000024, y: 1.00000012, z: 1.00000024}
+      rotation: {x: .702719748, y: -.0217053015, z: .0250646044, w: .710693836}
+      scale: {x: .999999881, y: .999999762, z: .999999881}
       transformModified: 1
     - name: MaleBaseMesh:RightHandThumb3
       position: {x: -.0276608076, y: -2.84217088e-16, z: 0}
-      rotation: {x: .0159521792, y: .023436036, z: .0214902684, w: .999366999}
-      scale: {x: .999999762, y: .999999762, z: .999999523}
+      rotation: {x: .0159521624, y: .0234359503, z: .0214900859, w: .999366999}
+      scale: {x: 1, y: 1.00000024, z: .999999642}
       transformModified: 1
     - name: MaleBaseMesh:RightHandThumb4
       position: {x: -.025120968, y: -2.84217088e-16, z: 0}
-      rotation: {x: 7.45057775e-08, y: -4.84287561e-08, z: -7.45057775e-08, w: 1}
-      scale: {x: .99999994, y: .99999994, z: 1}
+      rotation: {x: 0, y: -7.45057793e-09, z: 1.19209247e-07, w: 1}
+      scale: {x: 1.00000012, y: 1, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:RightHandIndex1
       position: {x: -.107370771, y: .00163318752, z: -.0361857675}
-      rotation: {x: -.0226055365, y: -.0402372852, z: -.0290996246, w: .99851048}
-      scale: {x: .999999702, y: .999999821, z: .999999583}
+      rotation: {x: -.0226054899, y: -.0402373113, z: -.0290995557, w: .99851048}
+      scale: {x: .999999821, y: 1.00000024, z: .999999881}
       transformModified: 1
     - name: MaleBaseMesh:RightHandIndex2
       position: {x: -.0280353706, y: 0, z: -1.7763568e-17}
-      rotation: {x: -.000649751571, y: .0285544842, z: .0296276826, w: .999152839}
-      scale: {x: 1, y: 1, z: 1.00000012}
+      rotation: {x: -.000649923168, y: .0285526589, z: .0296248756, w: .999153018}
+      scale: {x: 1.00000024, y: .99999994, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:RightHandIndex3
       position: {x: -.02766384, y: 0, z: 8.881784e-18}
-      rotation: {x: .000176895366, y: .00363365747, z: .0220717136, w: .99974978}
-      scale: {x: .999999881, y: 1, z: 1}
+      rotation: {x: .000177111418, y: .00363379763, z: .022071613, w: .99974978}
+      scale: {x: 1.00000012, y: .99999994, z: 1.00000036}
       transformModified: 1
     - name: MaleBaseMesh:RightHandIndex4
       position: {x: -.0254435167, y: 0, z: 0}
-      rotation: {x: 1.86264444e-08, y: -4.70317723e-08, z: -1.6763801e-08, w: 1}
-      scale: {x: 1.00000012, y: .99999994, z: 1.00000012}
+      rotation: {x: -3.16649604e-08, y: -2.06055066e-08, z: -2.23517365e-08, w: 1}
+      scale: {x: .99999994, y: 1, z: .999999762}
       transformModified: 1
     - name: MaleBaseMesh:RightHandMiddle1
       position: {x: -.109264217, y: .00515147392, z: -.0125945788}
-      rotation: {x: -.0125743086, y: -.00729479454, z: -.00670830486, w: .99987191}
-      scale: {x: 1, y: .999999642, z: .999999702}
+      rotation: {x: -.0125742676, y: -.00729482807, z: -.00670823082, w: .99987191}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:RightHandMiddle2
       position: {x: -.0294871517, y: 0, z: -1.50990333e-16}
-      rotation: {x: -7.12535984e-05, y: -.00662381109, z: .0204664618, w: .999768615}
-      scale: {x: 1, y: 1.00000024, z: 1}
+      rotation: {x: -7.12722249e-05, y: -.00662379619, z: .0204663724, w: .999768615}
+      scale: {x: .999999881, y: 1.00000024, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:RightHandMiddle3
       position: {x: -.0296484604, y: -2.84217088e-16, z: 0}
-      rotation: {x: .000243668357, y: .00454468932, z: .016841514, w: .999847829}
-      scale: {x: 1.00000012, y: .999999821, z: .999999762}
+      rotation: {x: .000243668415, y: .00454465346, z: .016841637, w: .999847889}
+      scale: {x: .999999881, y: .999999762, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:RightHandMiddle4
       position: {x: -.028103577, y: 0, z: 2.6645352e-17}
-      rotation: {x: 3.44589246e-08, y: 1.65891778e-09, z: -7.45057775e-08, w: 1}
-      scale: {x: .99999994, y: 1, z: 1}
+      rotation: {x: -2.88709892e-08, y: -3.24507603e-08, z: -1.60187426e-07, w: 1}
+      scale: {x: .99999994, y: 1.00000012, z: 1}
       transformModified: 1
     - name: MaleBaseMesh:RightHandRing1
       position: {x: -.109457783, y: .00600476749, z: .0117182648}
-      rotation: {x: .0287267901, y: -.0172831193, z: -.0383469351, w: .99870199}
-      scale: {x: .999999642, y: .999999821, z: .999999583}
+      rotation: {x: .0287268292, y: -.0172831267, z: -.0383468904, w: .99870199}
+      scale: {x: .999999881, y: 1, z: .999999762}
       transformModified: 1
     - name: MaleBaseMesh:RightHandRing2
       position: {x: -.027187204, y: -2.84217088e-16, z: -4.60742546e-17}
-      rotation: {x: -7.11157418e-06, y: .00508500496, z: .0396901183, w: .999199092}
-      scale: {x: 1.00000024, y: .999999821, z: 1}
+      rotation: {x: -7.33136767e-06, y: .00508524571, z: .0396922939, w: .999199033}
+      scale: {x: 1.00000024, y: 1, z: 1.00000024}
       transformModified: 1
     - name: MaleBaseMesh:RightHandRing3
       position: {x: -.0234031975, y: 2.84217088e-16, z: 1.11022296e-17}
-      rotation: {x: -6.68503126e-05, y: .000419085351, z: .0204161257, w: .999791443}
-      scale: {x: .99999994, y: 1.00000012, z: .999999881}
+      rotation: {x: -6.69564906e-05, y: .000418763637, z: .0204159748, w: .999791503}
+      scale: {x: .999999881, y: 1, z: .999999821}
       transformModified: 1
     - name: MaleBaseMesh:RightHandRing4
       position: {x: -.0239158403, y: 2.84217088e-16, z: 3.5527136e-17}
-      rotation: {x: 3.53902507e-08, y: -1.57160649e-08, z: -5.58793403e-08, w: 1}
-      scale: {x: .999999881, y: 1.00000012, z: 1}
+      rotation: {x: 6.33299209e-08, y: 1.09663205e-07, z: 3.35276056e-08, w: 1}
+      scale: {x: 1.00000012, y: 1.00000012, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:RightHandPinky1
       position: {x: -.10630969, y: .00318508595, z: .033509884}
-      rotation: {x: .00903711654, y: .0024315652, z: -.0122936852, w: .999880672}
-      scale: {x: .999999821, y: .999999583, z: .999999642}
+      rotation: {x: .00903716311, y: .00243154564, z: -.0122935995, w: .999880672}
+      scale: {x: 1.00000012, y: 1, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:RightHandPinky2
       position: {x: -.0239577387, y: 2.84217088e-16, z: 4.440892e-18}
-      rotation: {x: .000287786068, y: -.0306652561, z: .0114959544, w: .999463558}
-      scale: {x: 1.00000012, y: .99999994, z: .999999821}
+      rotation: {x: .000287769246, y: -.0306653678, z: .0114958985, w: .999463558}
+      scale: {x: 1, y: 1.00000024, z: .999999762}
       transformModified: 1
     - name: MaleBaseMesh:RightHandPinky3
       position: {x: -.0212548487, y: 2.84217088e-16, z: -1.7763568e-17}
-      rotation: {x: -9.11596944e-05, y: -.00476872455, z: .0164771955, w: .999852955}
-      scale: {x: 1, y: 1.00000012, z: 1.00000036}
+      rotation: {x: -9.13319891e-05, y: -.00476860069, z: .016476959, w: .999852896}
+      scale: {x: 1, y: .999999881, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:RightHandPinky4
       position: {x: -.0208456814, y: -5.68434176e-16, z: -1.7763568e-17}
-      rotation: {x: -9.87201574e-08, y: -3.55794185e-08, z: 1.86264448e-09, w: 1}
-      scale: {x: .999999881, y: .99999994, z: 1}
+      rotation: {x: -3.35276056e-08, y: 1.17666758e-07, z: 1.73225956e-07, w: 1}
+      scale: {x: .99999994, y: 1.00000012, z: 1.00000012}
       transformModified: 1
     - name: MaleBaseMesh:LeftUpLeg
       position: {x: .0628202036, y: -.00965716876, z: -.0800793916}
-      rotation: {x: .0189631265, y: .0315643661, z: .999202311, w: -.0154528599}
-      scale: {x: 1, y: 1.00000024, z: .999999821}
+      rotation: {x: .0189630706, y: .0315644331, z: .999202371, w: -.0154529223}
+      scale: {x: .999999702, y: .999999762, z: .999999762}
       transformModified: 1
     - name: MaleBaseMesh:LeftLeg
       position: {x: -.408853382, y: 1.3322676e-17, z: 1.7763568e-17}
-      rotation: {x: .0066267699, y: -.00464552641, z: .0316297263, w: .999466896}
-      scale: {x: .999999881, y: .999999762, z: 1.00000024}
+      rotation: {x: .0066268295, y: -.0046454668, z: .0316298604, w: .999466896}
+      scale: {x: 1.00000012, y: 1, z: 1.00000036}
       transformModified: 1
     - name: MaleBaseMesh:LeftFoot
       position: {x: -.467140228, y: -6.39488435e-16, z: -1.06581408e-16}
-      rotation: {x: -.0140873473, y: .0197190251, z: -.471571892, w: .881494522}
-      scale: {x: 1.00000048, y: 1, z: 1.00000012}
+      rotation: {x: -.0140874665, y: .0197188091, z: -.471572131, w: .881494462}
+      scale: {x: .999999881, y: 1.00000012, z: .999999762}
       transformModified: 1
     - name: MaleBaseMesh:LeftToeBase
       position: {x: -.171537206, y: 7.1054272e-17, z: 0}
-      rotation: {x: .00217923522, y: .00640749931, z: -.321978867, w: .946722686}
-      scale: {x: 1.00000012, y: .999999881, z: .999999881}
+      rotation: {x: .00217917538, y: .00640755799, z: -.321978778, w: .946722686}
+      scale: {x: 1.00000012, y: .999999881, z: 1.00000012}
       transformModified: 1
     - name: MaleBaseMesh:LeftToe_End
       position: {x: -.0594872646, y: 3.38935668e-17, z: 0}
-      rotation: {x: 5.56002533e-09, y: 2.98023224e-08, z: -1.17274034e-07, w: 1}
-      scale: {x: .99999994, y: .99999994, z: .999999881}
+      rotation: {x: 8.79594975e-09, y: -4.54907713e-17, z: -1.12140569e-07, w: 1}
+      scale: {x: .999999881, y: 1, z: .99999994}
       transformModified: 1
     - name: MaleBaseMesh:RightUpLeg
       position: {x: .0623653159, y: .00632263487, z: .0828156844}
-      rotation: {x: -.0201406777, y: .066177085, z: .997454345, w: -.0173181891}
-      scale: {x: .999999702, y: .999999881, z: .999999762}
+      rotation: {x: -.0201407056, y: .0661771074, z: .997454286, w: -.0173182171}
+      scale: {x: 1.00000024, y: .99999994, z: .999999881}
       transformModified: 1
     - name: MaleBaseMesh:RightLeg
       position: {x: -.408853382, y: -7.54951665e-17, z: -8.88178367e-17}
-      rotation: {x: -.00662445929, y: .00464525772, z: .0316297524, w: .999466956}
-      scale: {x: 1, y: 1.00000012, z: 1.00000024}
+      rotation: {x: -.00662451982, y: .0046453476, z: .0316297859, w: .999466896}
+      scale: {x: .999999702, y: .999999762, z: .999999642}
       transformModified: 1
     - name: MaleBaseMesh:RightFoot
       position: {x: -.467140228, y: -7.54951625e-16, z: 8.88178367e-17}
-      rotation: {x: .014089223, y: -.019717956, z: -.471571863, w: .881494522}
-      scale: {x: 1.0000006, y: 1.00000024, z: 1.00000024}
+      rotation: {x: .0140891969, y: -.019718051, z: -.471571892, w: .881494522}
+      scale: {x: 1.00000012, y: .999999881, z: 1.00000024}
       transformModified: 1
     - name: MaleBaseMesh:RightToeBase
       position: {x: -.171537206, y: 7.1054272e-17, z: -1.7763568e-17}
-      rotation: {x: -.00858776085, y: -.0254093111, z: -.32366991, w: .945789814}
-      scale: {x: .999999523, y: 1.00000012, z: .99999994}
+      rotation: {x: -.00858774781, y: -.0254092533, z: -.32366991, w: .945789874}
+      scale: {x: 1.00000012, y: .999999881, z: 1.00000024}
       transformModified: 1
     - name: MaleBaseMesh:RightToe_End
       position: {x: -.0594389848, y: -.000226092219, z: .00238557276}
-      rotation: {x: 1.53086113e-08, y: 2.92175104e-11, z: 1.4144458e-08, w: 1}
-      scale: {x: 1, y: 1, z: .99999994}
+      rotation: {x: 9.60426139e-09, y: 5.96230478e-08, z: 1.88592768e-08, w: 1}
+      scale: {x: 1.00000012, y: .99999994, z: 1.00000012}
       transformModified: 1
     armTwist: .5
     foreArmTwist: .5

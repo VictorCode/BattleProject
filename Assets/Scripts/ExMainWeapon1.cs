@@ -12,26 +12,14 @@ public class ExMainWeapon1 : MainWeaponGun
 	{
 		this.MainWeaponGunUpdate();
 		
-		if(!character.charMovement.isWalking() || this.reloading)
-		{
-			zoomOut();
-		}
-		
 		if (Input.GetMouseButtonDown(0) && !this.reloading && (character.charMovement.isWalking() || !character.charMovement.isGrounded()))
 		{
 			shoot();
 		}
 		
-		if(Input.GetMouseButton(1))
+		if(Input.GetMouseButton(1) && !this.reloading)
 		{
-			if(character.charMovement.isWalking() || !character.charMovement.isGrounded())
-			{
-				zoomIn();
-			}
-			else
-			{
-				zoomOut();
-			}
+			zoomIn();
 		}
 		else
 		{

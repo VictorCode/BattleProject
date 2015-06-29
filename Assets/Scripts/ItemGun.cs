@@ -15,7 +15,7 @@ public class ItemGun : ItemWeapon
 	[SerializeField] private Canvas ammuntionCanvas;
 	
 	protected bool reloading;
-	private float rt;
+	protected float rt;
 	private int bulletSet;
 	private int ammunition;
 	private int need; //for reloading
@@ -57,14 +57,9 @@ public class ItemGun : ItemWeapon
 			}
 			reloading = false;
 		}
-		
-		if (Input.GetKeyDown("r") && (ammunition != 0) && (bulletSet != bulletSetMax) && !reloading)
-		{
-			rt = reload();
-		}
 	}
 	
-	public void shoot()
+	public int shoot()
 	{
 		if(!reloading)
 		{
@@ -77,6 +72,7 @@ public class ItemGun : ItemWeapon
 				if(!infiniteAmmo || reloadable)
 				{
 					bulletSet--;
+					return 1;
 				}
 			}
 			else if(ammunition > 0)
@@ -84,20 +80,22 @@ public class ItemGun : ItemWeapon
 				if(reloadable)
 				{
 					this.audioSource.PlayOneShot(emptyClip);
-					rt = reload();
+					return -1;
 				}
 			}
 			else
 			{
 				this.audioSource.PlayOneShot(emptyClip);
+				return 1;
 			}	
-		}	
+		}
+		return 0;	
 	}
 	
 	//returns the time when finished reloading. Failure to reload returns -1
 	public float reload()
 	{
-		if(reloadable && !reloading)
+		if(reloadable && !reloading && (ammunition != 0) && (bulletSet != bulletSetMax))
 		{
 			need = bulletSetMax - bulletSet;
 			
@@ -118,7 +116,7 @@ public class ItemGun : ItemWeapon
 		}
 		else
 		{
-			return -1.0f;
+			return this.rt;
 		}
 	}
 	

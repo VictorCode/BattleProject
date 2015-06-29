@@ -1,19 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExItem2 : Item {
-
+public class ExItem2 : Item 
+{
 	[SerializeField] private float health;
 	[SerializeField] private int useNum;
 	[SerializeField] private AudioClip healSound;
 
 	private AudioSource aSource;
+	private int drinkHash;
 	
 	// Use this for initialization
 	void Start () 
 	{
 		this.ItemStart();
 		aSource = GetComponent<AudioSource>();
+		drinkHash = Animator.StringToHash("corona");
 	}
 	
 	// Update is called once per frame
@@ -34,11 +36,10 @@ public class ExItem2 : Item {
 	
 	void heal()
 	{
+		bodyAnim.SetTrigger(drinkHash);
 		this.character.heal(health);
 		aSource.clip = healSound;
 		aSource.Play();
 		useNum--;
-		
 	}
-	
 }

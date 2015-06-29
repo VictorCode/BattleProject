@@ -122,6 +122,7 @@
      <Compile Include="Assets\Scripts\InventoryCanvas.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
      <Compile Include="Assets\Scripts\ItemAmmCanv.cs" />
+     <Compile Include="Assets\Scripts\ItemAnimBasic.cs" />
      <Compile Include="Assets\Scripts\ItemBox.cs" />
      <Compile Include="Assets\Scripts\ItemCollision.cs" />
      <Compile Include="Assets\Scripts\ItemGun.cs" />

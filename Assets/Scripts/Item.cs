@@ -19,6 +19,7 @@ public class Item : MonoBehaviour
 	public bool emitterCheck;
 	protected Character character;
 	protected Animator anim;
+	protected Animator bodyAnim;
 	public Rigidbody rigBody;
 	protected bool zooming;
 	private Camera cam;
@@ -41,6 +42,7 @@ public class Item : MonoBehaviour
 		
 		character = GameObject.FindWithTag("Player").GetComponent<Character>();
 		anim = GetComponent<Animator>();
+		bodyAnim = GameObject.Find("BodyModel").GetComponent<Animator>();
 		rigBody = GetComponent<Rigidbody>();
 		cam = GameObject.Find("MainCamera").GetComponent<Camera>();
 		normalFOV = cam.fieldOfView;

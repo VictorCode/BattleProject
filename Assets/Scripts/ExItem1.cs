@@ -3,10 +3,14 @@ using System.Collections;
 
 public class ExItem1 : ItemGun 
 {
+	private int relHash;
+	private float temprt;
+
 	// Use this for initialization
 	void Start () 
 	{
 		this.ItemGunStart();
+		relHash = Animator.StringToHash("expistolreload");
 	}
 	
 	// Update is called once per frame
@@ -14,22 +18,24 @@ public class ExItem1 : ItemGun
 	{
 		this.ItemGunUpdate();
 		
-		if(!character.charMovement.isWalking() || this.reloading)
+		if (Input.GetKeyDown("r") && !this.reloading && ((temprt = reload()) > this.rt))
 		{
-			zoomOut();
+			bodyAnim.SetTrigger(relHash);
+			this.rt = temprt;
 		}
 		
 		if (Input.GetMouseButtonDown(0) && !this.reloading && (character.charMovement.isWalking() || !character.charMovement.isGrounded()))
 		{
-			shoot();
+			if(shoot() == -1)
+			{
+				this.rt = reload();
+				bodyAnim.SetTrigger(relHash);
+			}
 		}
 		
-		if(Input.GetMouseButton(1))
+		if(Input.GetMouseButton(1) && !this.reloading)
 		{
-			if(character.charMovement.isWalking() || !character.charMovement.isGrounded())
-			{
-				zoomIn();
-			}
+			zoomIn();
 		}
 		else
 		{
