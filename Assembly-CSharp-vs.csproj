@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ImportedAssets\Mixamo\Magic Pack\Demo\CameraScroll.cs" />
+     <Compile Include="Assets\ImportedAssets\NetStarter\Scripts\CrateMove.cs" />
+     <Compile Include="Assets\ImportedAssets\NetStarter\Scripts\Player.cs" />
+     <Compile Include="Assets\ImportedAssets\NetStarter\Scripts\SceneControl.cs" />
      <Compile Include="Assets\ImportedAssets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
      <Compile Include="Assets\ImportedAssets\Standard Assets\Cameras\Scripts\AutoCam.cs" />
      <Compile Include="Assets\ImportedAssets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
@@ -106,6 +109,19 @@
      <Compile Include="Assets\ImportedAssets\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\ImportedAssets\Standard Assets\Utility\WaypointProgressTracker.cs" />
      <Compile Include="Assets\ImportedAssets\ToonBot\ToonBot(Free) Assets\Controller\RobotTestScriptFree.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\ColorControl.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\GuiLobbyControllers.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\GuiLobbyManager.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\PlayerLobby.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\UI\ConnectingCanvasHooks.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\UI\ExitToLobbyHooks.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\UI\JoinMatchHooks.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\UI\LobbyCanvasHooks.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\UI\MatchMakerHooks.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\UI\OfflineControlHooks.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\UI\OnlineControlHooks.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\UI\PlayerCanvasHooks.cs" />
+     <Compile Include="Assets\LobbyStuff\scripts\UI\PopupMessageHooks.cs" />
      <Compile Include="Assets\Scripts\BasicPowerAnim.cs" />
      <Compile Include="Assets\Scripts\BlueChar.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
@@ -135,15 +151,15 @@
      <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\Poof.cs" />
      <Compile Include="Assets\Scripts\WIHolder.cs" />
-     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
+     <None Include="Assets\ImportedAssets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\ImportedAssets\Mobility_01_Free_v2\Mobility_Free_Unity_Info.txt" />
-     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
+     <None Include="Assets\ImportedAssets\Toon Shading\Sources\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
-     <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
+     <None Include="Assets\ImportedAssets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" />
+     <None Include="Assets\ImportedAssets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" />
      <None Include="Assets\ImportedAssets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\ImportedAssets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
      <None Include="Assets\ImportedAssets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
