@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class WIHolder : MonoBehaviour 
+public class WIHolder : NetworkBehaviour
 {
 	[SerializeField] private AudioSource throwSound;
 	[SerializeField] private int forceThrow;
 
 	public GameObject[] objects;
-	private Character character;
+	public Character character; //Character gives referenece in Start()
 	private int itemIndex;
 	private int weaponIndex;
 	public int itemOffset;
@@ -23,14 +24,15 @@ public class WIHolder : MonoBehaviour
 	static public int changeId; //use to see if weapon/item has changed since last used
 	private IKHands hands;
 	private Transform center;
+	private bool throwing;
 
 	void Start ()
 	{
+		throwing = false;
 		hTransform = this.transform;
-		character = (Character) GameObject.FindObjectOfType(typeof(Character));
 		objects = new GameObject[character.getItemMax() + character.getWeaponMax() + 1];
 		itemOffset = character.getWeaponMax();
-		center = GameObject.Find("MainCamera/Center").transform;
+		center = character.GetComponentInChildren<CenterPos>().gameObject.transform;
 		weaponIndex = 1;
 		oldItemIndex = 1;
 		oldWeaponIndex = 1;
@@ -42,13 +44,54 @@ public class WIHolder : MonoBehaviour
 		changeId = -100000;//increment up so more changes stored
 		wMax = character.getWeaponMax();
 		setupHolding(); // make sure occurs after appropriate initialization
-		hands = GameObject.Find("BodyModel").GetComponent<IKHands>();
+		hands = character.GetComponentInChildren<IKHands>();						//oldcode: GameObject.Find("BodyModel").GetComponent<IKHands>();
 		hands.setHands(objects[1].name);
 		this.transform.LookAt(center);
 	}
 	
 	void Update ()
 	{
+		if(!character.isLocalPlayer)
+		{
+			if(throwing)
+			{
+				throwSound.Play();
+				objects[itemIndex + itemOffset].GetComponent<Item>().isThrown = true;
+				GameObject temp = objects[itemIndex + itemOffset];
+				temp.transform.SetParent(null);
+				temp.GetComponent<Rigidbody>().isKinematic = false;
+				temp.GetComponent<Collider>().isTrigger = false;
+				temp.GetComponent<Rigidbody>().AddForce(forceThrow * 100 * transform.forward);
+				objects[itemIndex + itemOffset] = new GameObject();
+				character.inventory.removeItem(itemIndex);
+				weaponShow = true;
+				throwing = false;
+			}
+		
+			//update item being shown if an index changes using syncvariables
+			if((itemIndex != oldItemIndex) || (weaponIndex != oldWeaponIndex) || (weaponShow != oldWeaponShow))
+			{
+				changeId++;
+				if(weaponShow)
+				{
+					showWeapon(weaponIndex);
+					hands.setHands(objects[weaponIndex].name);
+				}
+				else
+				{
+					showItem(itemIndex);
+					hands.setHands(objects[itemIndex + itemOffset].name);
+				}
+				this.transform.LookAt(center);
+			}
+			
+			oldItemIndex = itemIndex;
+			oldWeaponIndex = weaponIndex;
+			oldWeaponShow = weaponShow;
+			
+			return; //end here if not localPlayer
+		}
+	
 		//get input and decide weapon and item indexes
 		mWheel += Input.GetAxis("Mouse ScrollWheel");
 		
@@ -75,6 +118,7 @@ public class WIHolder : MonoBehaviour
 		//throw item functionality
 		if((Input.GetMouseButtonDown(2) || Input.GetKeyDown("t")) && !weaponShow)
 		{
+			throwing = true;
 			throwSound.Play();
 			objects[itemIndex + itemOffset].GetComponent<Item>().isThrown = true;
 			GameObject temp = objects[itemIndex + itemOffset];

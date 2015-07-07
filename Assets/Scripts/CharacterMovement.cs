@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
+using UnityEngine.Networking;
 using Random = UnityEngine.Random;
 
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -9,7 +10,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
 	
-    public class CharacterMovement : MonoBehaviour
+    public class CharacterMovement : NetworkBehaviour
     {
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
@@ -53,6 +54,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Use this for initialization
         private void Start()
         {
+			if(!isLocalPlayer)
+			{
+				return;
+			}
+        
 			if(sideBackRunDiv < 1)
 			{
 				sideBackRunDiv = 1;
@@ -77,6 +83,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+			if(!isLocalPlayer)
+			{
+				return;
+			}
+        
             RotateView();
             // the jump state needs to read here to make sure it is not missed
 			if (jumps < maxJumps)
@@ -302,7 +313,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
             }
         }
-
 
         private void RotateView()
         {

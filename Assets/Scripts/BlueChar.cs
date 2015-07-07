@@ -14,6 +14,11 @@ public class BlueChar : Character
 	//CharacterUpdate must be used first in each character's Update function
 	void Update () 
 	{
+		if(!isLocalPlayer)
+		{
+			return;
+		}
+	
 		this.CharacterUpdate();
 	
 		if (Input.GetKeyDown("q"))
@@ -40,7 +45,6 @@ public class BlueChar : Character
 		{
 			this.usePower(10);
 		}
-	
 	}
 	
 	void epower()

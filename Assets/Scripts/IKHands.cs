@@ -55,18 +55,26 @@ public class IKHands : MonoBehaviour
 	
 	public void setHands(string objName)
 	{
-		if(GameObject.Find(string.Concat("WIHolder/",objName,"/RHandle")))
+		if(this.gameObject.GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().gameObject.GetComponentInChildren<MainWeapon>().gameObject.GetComponentInChildren<RHandle>() != null)
 		{
-			this.rightHandObj = GameObject.Find(string.Concat("WIHolder/",objName,"/RHandle")).transform;
+			this.rightHandObj = GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<MainWeapon>().GetComponentInChildren<RHandle>().gameObject.transform;
+		}
+		else if(this.gameObject.GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<Item>().GetComponentInChildren<RHandle>() != null)
+		{
+			this.rightHandObj = GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<Item>().GetComponentInChildren<RHandle>().gameObject.transform;
 		}
 		else
 		{
 			this.rightHandObj = null;
 		}
 		
-		if(GameObject.Find(string.Concat("WIHolder/",objName,"/LHandle")))
+		if(this.gameObject.GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<MainWeapon>().GetComponentInChildren<LHandle>() != null)
 		{
-			this.leftHandObj = GameObject.Find(string.Concat("WIHolder/",objName,"/LHandle")).transform;
+			this.leftHandObj = GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<MainWeapon>().GetComponentInChildren<LHandle>().gameObject.transform;
+		}
+		else if(this.gameObject.GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<Item>().GetComponentInChildren<LHandle>() != null)
+		{
+			this.leftHandObj = GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<Item>().GetComponentInChildren<LHandle>().gameObject.transform;
 		}
 		else
 		{

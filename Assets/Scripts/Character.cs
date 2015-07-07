@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof (CharacterMovement))]
 
-public class Character : MonoBehaviour
+public class Character : NetworkBehaviour
 {
 	[SerializeField] private float healthMax;
 	[SerializeField] private float powerMax;
@@ -49,12 +50,24 @@ public class Character : MonoBehaviour
 	
 	//Reminder: the MainCamera object for the character must be named exactly "MainCamera" for items and weapons to find it
 	//must be used first in each character's Start function to initialize properly
+	void Awake()
+	{
+		this.GetComponentInChildren<WIHolder>().character = this;
+	}
+	
 	public void CharacterStart()
 	{
+		if(!isLocalPlayer)
+		{
+			this.gameObject.tag = "enemy";
+			inventory = new Inventory(itemMax);
+			return;
+		}
+		this.gameObject.tag = "Player";
+		
 		Cursor.lockState = CursorLockMode.Locked;	//cursor handling could be moved
 		Cursor.visible = false;
 		
-		this.gameObject.tag = "Player";
 		health = healthMax;
 		power = powerMax;
 		charMovement = GetComponent<CharacterMovement>();
@@ -88,6 +101,11 @@ public class Character : MonoBehaviour
 	//must be used in each character's Update function to work
 	public void CharacterUpdate()
 	{
+		if(!isLocalPlayer)
+		{
+			return;
+		}
+	
 		//health regeneration functionality
 		if(health < healthMax)
 		{
