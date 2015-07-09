@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class ExItem2 : Item 
 {
@@ -15,6 +16,12 @@ public class ExItem2 : Item
 	{
 		this.ItemStart();
 		aSource = GetComponent<AudioSource>();
+		
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
+		
 		drinkHash = Animator.StringToHash("corona");
 	}
 	
@@ -23,9 +30,15 @@ public class ExItem2 : Item
 	{
 		this.ItemUpdate();
 		
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
+		
 		if (Input.GetMouseButtonDown(0) && (useNum != 0))
 		{
 			heal();
+			bodyAnim.SetTrigger(drinkHash);
 		}
 		
 		if(useNum == 0)
@@ -36,7 +49,6 @@ public class ExItem2 : Item
 	
 	void heal()
 	{
-		bodyAnim.SetTrigger(drinkHash);
 		this.character.heal(health);
 		aSource.clip = healSound;
 		aSource.Play();

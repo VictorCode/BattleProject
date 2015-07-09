@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof (Animator))]
 [RequireComponent(typeof (Camera))]
 [RequireComponent(typeof (BoxCollider))]
 
-public class MainWeapon : MonoBehaviour 
+public class MainWeapon : NetworkBehaviour
 {
 	[SerializeField] protected bool isZoomable;
 	[SerializeField] private Texture2D crosshair;
@@ -14,7 +15,7 @@ public class MainWeapon : MonoBehaviour
 	[SerializeField] public Vector3 posOffset;
 	[SerializeField] private int range;
 	
-	protected Character character;
+	public Character character;
 	protected bool zooming;
 	protected Animator anim;
 	private bool enemyDetect;
@@ -31,9 +32,16 @@ public class MainWeapon : MonoBehaviour
 	{
 		this.gameObject.tag = "MainWeapon";
 		this.GetComponent<BoxCollider>().isTrigger = true; //Need for weapon collission
-		character = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
-		anim = GetComponent<Animator>();
-		cam = GameObject.Find("MainCamera").GetComponent<Camera>();
+		character = this.GetComponentInParent<WIHolder>().character;
+		anim = this.GetComponent<Animator>();
+		
+		if(!this.character.isLocalPlayer)
+		{
+			cam = null;
+			return;			//end here if not localPlayer
+		}
+		
+		cam = Camera.main;
 		normalFOV = cam.fieldOfView;
 		
 		if(zoomDist < 20)
@@ -45,6 +53,11 @@ public class MainWeapon : MonoBehaviour
 	//must be used first in each MainWeapon's Update function
 	public void MainWeaponUpdate()
 	{
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
+		
 		mouseRay = Camera.main.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0));
 		
 		if(Physics.Raycast(mouseRay, out hitInfo))
@@ -65,7 +78,12 @@ public class MainWeapon : MonoBehaviour
 	}
 	
 	void OnGUI()
-	{	
+	{
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
+		
 		if(enemyDetect)
 		{
 			x = (Screen.width - crosshair.width) / 2;

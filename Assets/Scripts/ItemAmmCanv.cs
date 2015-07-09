@@ -11,7 +11,7 @@ public class ItemAmmCanv : MonoBehaviour
 	
 	void Start () 
 	{
-		ItemGun[] array = (ItemGun[]) GameObject.Find("WIHolder").GetComponentsInChildren<ItemGun>();
+		ItemGun[] array = (ItemGun[]) GameObject.FindWithTag("Player").GetComponentsInChildren<ItemGun>();
 		int i = 0;
 		weapon = array[0];
 		while(i < array.Length)

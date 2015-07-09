@@ -4,6 +4,7 @@ using System.Collections;
 public class ExMainWeapon2 : MainWeaponGun
 {
 	private float temprt;
+	
 	void Start () 
 	{
 		this.MainWeaponGunStart();
@@ -13,6 +14,10 @@ public class ExMainWeapon2 : MainWeaponGun
 	{
 		this.MainWeaponGunUpdate();
 		
+		if(!this.character.isLocalPlayer)
+		{
+			return;
+		}
 		
 		if (Input.GetKeyDown("r") && !this.reloading && ((temprt = reload()) > this.rt))
 		{
@@ -20,7 +25,7 @@ public class ExMainWeapon2 : MainWeaponGun
 			this.rt = temprt;
 		}
 
-		if (Input.GetMouseButtonDown(0) && !this.reloading && (character.charMovement.isWalking() || !character.charMovement.isGrounded()))
+		if (Input.GetMouseButtonDown(0) && !this.reloading)
 		{
 			if(shoot() == -1)
 			{

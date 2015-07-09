@@ -137,6 +137,7 @@
      <Compile Include="Assets\Scripts\ItemCollision.cs" />
      <Compile Include="Assets\Scripts\ItemGun.cs" />
      <Compile Include="Assets\Scripts\ItemWeapon.cs" />
+     <Compile Include="Assets\Scripts\LHandItPos.cs" />
      <Compile Include="Assets\Scripts\LHandle.cs" />
      <Compile Include="Assets\Scripts\MCam.cs" />
      <Compile Include="Assets\Scripts\MainAmmCanv.cs" />
@@ -145,6 +146,7 @@
      <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\PlayerLobby.cs" />
      <Compile Include="Assets\Scripts\Poof.cs" />
+     <Compile Include="Assets\Scripts\RHandItPos.cs" />
      <Compile Include="Assets\Scripts\RHandle.cs" />
      <Compile Include="Assets\Scripts\UI\ConnectingCanvasHooks.cs" />
      <Compile Include="Assets\Scripts\UI\ExitToLobbyHooks.cs" />

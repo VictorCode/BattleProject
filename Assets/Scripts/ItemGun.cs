@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class ItemGun : ItemWeapon 
 {
@@ -9,6 +10,7 @@ public class ItemGun : ItemWeapon
 	[SerializeField] private int bulletSetMax;
 	[SerializeField] private float reloadTime;
 	[SerializeField] private GameObject bullet;
+	[SerializeField] private int bulletSpeed;
 	[SerializeField] private AudioClip reloadSound;
 	[SerializeField] private AudioClip emptyClip;
 	[SerializeField] private AudioClip shootSound;
@@ -20,13 +22,19 @@ public class ItemGun : ItemWeapon
 	private int ammunition;
 	private int need; //for reloading
 	private int reloadDX;
+	private Transform emitter;
 	
 	public void ItemGunStart()
 	{
 		this.ItemWeaponStart();
-		reloading = false;
+		emitter = GetComponentInChildren<Emitter>().gameObject.transform;
+		
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
+		
 		need = 0;
-		reloadDX = WIHolder.changeId;
 		
 		if(!infiniteAmmo)
 		{	
@@ -38,11 +46,19 @@ public class ItemGun : ItemWeapon
 		{
 			bulletSet = 1000; //arbitrary non-zero or negative number so shoot function always satisfies first if-condition(shoot function will make sure it doesn't decrement)
 		}
+		
+		reloadDX = WIHolder.changeId;
+		reloading = false;
 	}
 	
 	public void ItemGunUpdate() 
 	{
 		this.ItemWeaponUpdate();
+		
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
 		
 		if(reloading && (reloadDX != WIHolder.changeId))
 		{
@@ -67,7 +83,8 @@ public class ItemGun : ItemWeapon
 			{
 				this.audioSource.clip = shootSound;
 				this.audioSource.Play();
-				Instantiate(bullet);
+				GameObject bTemp = (GameObject) Instantiate(bullet,emitter.position,emitter.rotation);
+				bTemp.GetComponent<Rigidbody>().velocity = emitter.transform.forward * bulletSpeed * 100 * Time.deltaTime;
 				
 				if(!infiniteAmmo || reloadable)
 				{
@@ -89,7 +106,7 @@ public class ItemGun : ItemWeapon
 				return 1;
 			}	
 		}
-		return 0;	
+		return 0;
 	}
 	
 	//returns the time when finished reloading. Failure to reload returns -1

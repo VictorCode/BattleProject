@@ -11,7 +11,6 @@ public class Pickup : MonoBehaviour
 		if(other.tag == "Item" && other.gameObject.GetComponent<Item>().isThrown == true)
 		{
 			other.gameObject.GetComponent<Item>().enabled = true;
-			other.gameObject.GetComponent<Item>().emitterCheck = false;
 			other.gameObject.GetComponent<Item>().isThrown = false;
 			
 			int theIndex = this.gameObject.GetComponentInParent<Character>().inventory.addItem(other.GetComponent<Item>());
@@ -32,7 +31,6 @@ public class Pickup : MonoBehaviour
 			{
 				other.gameObject.GetComponent<Item>().enabled = false;
 				other.gameObject.GetComponent<Item>().isThrown = true;
-				other.gameObject.GetComponent<Item>().emitterCheck = true;
 			}
 		}
 	}
@@ -40,7 +38,6 @@ public class Pickup : MonoBehaviour
 	public void pickUpItem(Item it)
 	{
 		it.GetComponent<Item>().enabled = true;
-		it.gameObject.GetComponent<Item>().emitterCheck = false;
 		it.gameObject.GetComponent<Item>().isThrown = false;
 		int theIndex = this.gameObject.GetComponentInParent<Character>().inventory.addItem(it);
 		
@@ -60,7 +57,6 @@ public class Pickup : MonoBehaviour
 		{
 			it.gameObject.GetComponent<Item>().enabled = false;
 			it.gameObject.GetComponent<Item>().isThrown = true;
-			it.gameObject.GetComponent<Item>().emitterCheck = true;
 		}
 	}
 }

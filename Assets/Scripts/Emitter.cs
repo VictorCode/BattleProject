@@ -3,29 +3,23 @@ using System.Collections;
 
 public class Emitter : MonoBehaviour 
 {
-	Component[] array;
-	private Item it;
 	private Transform center;
 
 	// Use this for initialization
 	void Start () 
 	{
-		array = GetComponentsInParent<Item>();
-		it = (Item) array[0];
-		center = GameObject.Find("MainCamera/Center").transform;
-		this.transform.LookAt(center);
-	}
-	
-	//it's less expensive than having the item update every frame
-	void Update ()
-	{
-		if(it.emitterCheck)
+		if(GetComponentInParent<MainWeapon>() != null)
 		{
-			this.gameObject.name = "w";
+			center = GetComponentInParent<MainWeapon>().character.GetComponentInChildren<CenterPos>().gameObject.transform;
+		}
+		else if(GetComponentInParent<Item>() != null)
+		{
+			center = GetComponentInParent<Item>().character.GetComponentInChildren<CenterPos>().gameObject.transform;
 		}
 		else
 		{
-			this.gameObject.name = "Emitter";
+			center = null;
 		}
+		this.transform.LookAt(center);
 	}
 }

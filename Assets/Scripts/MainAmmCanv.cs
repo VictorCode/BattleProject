@@ -11,7 +11,7 @@ public class MainAmmCanv : MonoBehaviour
 	
 	void Start () 
 	{
-		weapon = (MainWeaponGun) GameObject.FindWithTag("MainWeapon").GetComponent<MainWeaponGun>();
+		weapon = (MainWeaponGun) GameObject.FindWithTag("Player").GetComponentInChildren<MainWeaponGun>();
 		canvTexts = this.GetComponentsInChildren<Text>();
 		bulletGui = (Text) canvTexts[0];
 		ammGui = (Text) canvTexts[1];

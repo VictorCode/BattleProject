@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof (AudioSource))]
 
@@ -11,6 +12,7 @@ public class MainWeaponGun : MainWeapon
 	[SerializeField] private int bulletSetMax;
 	[SerializeField] private float reloadTime;
 	[SerializeField] private GameObject bullet;
+	[SerializeField] private int bulletSpeed;
 	[SerializeField] private AudioClip reloadSound;
 	[SerializeField] private AudioClip emptyClip;
 	[SerializeField] private AudioClip shootSound;
@@ -23,12 +25,20 @@ public class MainWeaponGun : MainWeapon
 	private int ammunition;
 	private int need; //for reloading
 	private int reloadDX;
+	private Transform emitter;
 	
 	public void MainWeaponGunStart()
 	{
 		this.MainWeaponStart();
-		reloading = false;
 		audioSource = GetComponent<AudioSource>();
+		emitter = GetComponentInChildren<Emitter>().gameObject.transform;
+		
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
+		
+		reloading = false;
 		rt = 0.0f;
 		need = 0;
 		reloadDX = WIHolder.changeId;
@@ -48,6 +58,11 @@ public class MainWeaponGun : MainWeapon
 	public void MainWeaponGunUpdate()
 	{
 		this.MainWeaponUpdate();
+		
+		if(!this.character.isLocalPlayer)
+		{
+			return;
+		}
 		
 		//universal reload input
 		
@@ -74,7 +89,8 @@ public class MainWeaponGun : MainWeapon
 			{
 				audioSource.clip = shootSound;
 				audioSource.Play();
-				Instantiate(bullet);
+				GameObject bTemp = (GameObject) Instantiate(bullet,emitter.position,emitter.rotation);
+				bTemp.GetComponent<Rigidbody>().velocity = emitter.transform.forward * bulletSpeed * 100 * Time.deltaTime;
 				
 				if(!infiniteAmmo || reloadable)
 				{

@@ -59,10 +59,11 @@ public class Character : NetworkBehaviour
 	{
 		if(!isLocalPlayer)
 		{
-			this.gameObject.tag = "enemy";
+			this.gameObject.tag = "enemy";//need to figure out
 			inventory = new Inventory(itemMax);
 			return;
 		}
+		
 		this.gameObject.tag = "Player";
 		
 		Cursor.lockState = CursorLockMode.Locked;	//cursor handling could be moved
@@ -94,8 +95,8 @@ public class Character : NetworkBehaviour
 		lhSoundPlaying = false;
 		hDangerThreshold = (int) (healthMax * .2);
 		Instantiate(hud);
-		Instantiate(invHud);
 		inventory = new Inventory(itemMax);
+		inventory.invCanvas = Instantiate(invHud).GetComponent<InventoryCanvas>();
 	}
 	
 	//must be used in each character's Update function to work

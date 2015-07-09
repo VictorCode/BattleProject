@@ -12,11 +12,12 @@ public class ItemAnimBasic : StateMachineBehaviour
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) 
 	{
-		pos = GameObject.Find("WIHolder").transform.localPosition;
-		rot = GameObject.Find("WIHolder").transform.localRotation;
-		GameObject.Find("BodyModel").GetComponent<IKHands>().ikActive = false;
-		GameObject.Find("WIHolder").transform.SetParent(GameObject.Find("RHandItem").transform);
-		GameObject.Find("WIHolder").transform.localPosition = Vector3.zero;
+		WIHolder whtemp = animator.gameObject.GetComponentInParent<Character>().gameObject.GetComponentInChildren<WIHolder>();
+		pos = whtemp.gameObject.transform.localPosition;
+		rot = whtemp.gameObject.transform.localRotation;
+		animator.GetComponent<IKHands>().ikActive = false;
+		whtemp.gameObject.transform.SetParent(animator.GetComponentInChildren<RHandItPos>().gameObject.transform);
+		whtemp.gameObject.transform.localPosition = Vector3.zero;
 	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -27,10 +28,12 @@ public class ItemAnimBasic : StateMachineBehaviour
 	//OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
-		GameObject.Find("WIHolder").transform.SetParent(GameObject.Find("MainCamera").transform);
-		GameObject.Find("WIHolder").transform.localRotation = rot;
-		GameObject.Find("WIHolder").transform.localPosition = pos;
-		GameObject.Find("BodyModel").GetComponent<IKHands>().ikActive = true;
+		WIHolder whtemp = animator.gameObject.GetComponentInParent<Character>().gameObject.GetComponentInChildren<WIHolder>();
+	
+		whtemp.transform.SetParent(Camera.main.transform);
+		whtemp.transform.localRotation = rot;
+		whtemp.transform.localPosition = pos;
+		animator.GetComponent<IKHands>().ikActive = true;
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

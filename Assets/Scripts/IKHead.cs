@@ -10,7 +10,7 @@ public class IKHead : MonoBehaviour
 	void Start () 
 	{
 		animator = GetComponent<Animator>();
-		lookObj = GameObject.Find("Center").transform;
+		lookObj = GetComponentInParent<Character>().gameObject.GetComponentInChildren<CenterPos>().transform;
 		ikActive = true;
 	}
 	

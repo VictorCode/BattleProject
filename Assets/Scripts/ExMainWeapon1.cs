@@ -12,7 +12,12 @@ public class ExMainWeapon1 : MainWeaponGun
 	{
 		this.MainWeaponGunUpdate();
 		
-		if (Input.GetMouseButtonDown(0) && !this.reloading && (character.charMovement.isWalking() || !character.charMovement.isGrounded()))
+		if(!this.character.isLocalPlayer)
+		{
+			return;
+		}
+		
+		if (Input.GetMouseButtonDown(0) && !this.reloading)
 		{
 			shoot();
 		}

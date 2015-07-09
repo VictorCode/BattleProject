@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class ExItem1 : ItemGun 
 {
@@ -10,6 +11,12 @@ public class ExItem1 : ItemGun
 	void Start () 
 	{
 		this.ItemGunStart();
+		
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
+		
 		relHash = Animator.StringToHash("expistolreload");
 	}
 	
@@ -18,13 +25,18 @@ public class ExItem1 : ItemGun
 	{
 		this.ItemGunUpdate();
 		
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
+		
 		if (Input.GetKeyDown("r") && !this.reloading && ((temprt = reload()) > this.rt))
 		{
 			bodyAnim.SetTrigger(relHash);
 			this.rt = temprt;
 		}
 		
-		if (Input.GetMouseButtonDown(0) && !this.reloading && (character.charMovement.isWalking() || !character.charMovement.isGrounded()))
+		if (Input.GetMouseButtonDown(0) && !this.reloading)
 		{
 			if(shoot() == -1)
 			{

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletHit : MonoBehaviour {
-
+public class BulletHit : MonoBehaviour 
+{
 	[SerializeField] private AudioSource hitSound;
 	
 	void Start() 

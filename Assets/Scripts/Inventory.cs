@@ -6,7 +6,7 @@ public class Inventory
 	private int size;
 	public Item[] items;
 	private int itemNum;
-	private InventoryCanvas invCanvas;
+	public InventoryCanvas invCanvas;
 	
 	public Inventory(int num)
 	{
@@ -19,7 +19,7 @@ public class Inventory
 		itemNum = 0;
 		size = num;
 		items = new Item[size];
-		invCanvas = GameObject.FindWithTag("InvCanvas").GetComponent<InventoryCanvas>();
+		invCanvas = null;
 	}
 
 	public int addItem(Item it)
@@ -33,7 +33,10 @@ public class Inventory
 				{
 					items[i] = it;
 					itemNum++;
-					invCanvas.canvShow(i + 1, it.symbol);
+					if(invCanvas != null)
+					{
+						invCanvas.canvShow(i + 1, it.symbol);
+					}
 					return i + 1;
 				}
 				i++;

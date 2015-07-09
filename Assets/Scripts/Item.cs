@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof (Animator))]
 [RequireComponent(typeof (Rigidbody))]
-[RequireComponent(typeof (Camera))]
 [RequireComponent(typeof (BoxCollider))]
 [RequireComponent(typeof (AudioSource))]
 
-public class Item : MonoBehaviour 
+public class Item : NetworkBehaviour 
 {
 	[SerializeField] protected bool isZoomable;
 	[SerializeField] private float zoomDist;
@@ -16,8 +16,7 @@ public class Item : MonoBehaviour
 	
 	public bool isThrown;
 	public int id;
-	public bool emitterCheck;
-	protected Character character;
+	public Character character;
 	protected Animator anim;
 	protected Animator bodyAnim;
 	public Rigidbody rigBody;
@@ -31,41 +30,46 @@ public class Item : MonoBehaviour
 	//must be used first in each Item's Update function
 	public void ItemStart()
 	{
-		this.id = (int) Time.time;
 		this.gameObject.tag = "Item"; //if not tagged "Item" the WIHolder and picking up etc... items won't work
 		this.GetComponent<BoxCollider>().isTrigger = true; //Need for weapon collission
+		character = this.GetComponentInParent<WIHolder>().character;
+		anim = this.GetComponent<Animator>();
+		bodyAnim = character.GetComponentInChildren<IKHands>().gameObject.GetComponent<Animator>(); //use IK hands to get body-model-object
+		rigBody = GetComponent<Rigidbody>();
+		zooming = false;
+		audioSource = GetComponent<AudioSource>();
+		usedUp = false;
+		rigBody.isKinematic = true;
+		isThrown = false;
+		//emitterCheck = false;
+		this.id = (int) Time.time;
+		
+		if(!this.character.isLocalPlayer)
+		{
+			cam = null;
+			return;			//end here if not localPlayer
+		}
 		
 		if(zoomDist < 20)
 		{
 			zoomDist = 20;
 		}
 		
-		character = GameObject.FindWithTag("Player").GetComponent<Character>();
-		anim = GetComponent<Animator>();
-		bodyAnim = GameObject.Find("BodyModel").GetComponent<Animator>();
-		rigBody = GetComponent<Rigidbody>();
-		cam = GameObject.Find("MainCamera").GetComponent<Camera>();
+		cam = Camera.main;
 		normalFOV = cam.fieldOfView;
-		zooming = false;
-		audioSource = GetComponent<AudioSource>();
-		usedUp = false;
-		rigBody.isKinematic = true;
-		isThrown = false;
-		emitterCheck = false;
 	}
 	
 	public void ItemUpdate()
 	{
 		if(this.isThrown)
 		{
-			emitterCheck = true;
 			this.enabled = false;
 		}
 	}
 	
 	public void zoomIn()
 	{
-		if(isZoomable)
+		if(this.isZoomable)
 		{
 			zooming = true;
 			t = Time.timeSinceLevelLoad - Time.time;
@@ -75,7 +79,7 @@ public class Item : MonoBehaviour
 	
 	public void zoomOut()
 	{
-		if(isZoomable)
+		if(this.isZoomable)
 		{
 			zooming = false;
 			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,normalFOV,(t + .01f) * Time.deltaTime * 1500);

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class ItemWeapon : Item
 {
@@ -21,6 +22,12 @@ public class ItemWeapon : Item
 	public void ItemWeaponUpdate()
 	{
 		this.ItemUpdate();
+		
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
+		
 		mouseRay = Camera.main.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0));
 		
 		if(Physics.Raycast(mouseRay, out hitInfo))
@@ -47,6 +54,11 @@ public class ItemWeapon : Item
 	
 	void OnGUI()
 	{
+		if(!this.character.isLocalPlayer)
+		{
+			return;			//end here if not localPlayer
+		}
+	
 		if(enemyDetect)
 		{
 			x = (Screen.width - crosshair.width) / 2;

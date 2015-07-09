@@ -41,11 +41,11 @@ public class WIHolder : NetworkBehaviour
 		oldWeaponShow = true;
 		mWheel = 0.0f;
 		mWheelOld = 0.0f;
-		changeId = -100000;//increment up so more changes stored
+		changeId = -10000000;//increment up so more changes stored
 		wMax = character.getWeaponMax();
 		setupHolding(); // make sure occurs after appropriate initialization
-		hands = character.GetComponentInChildren<IKHands>();						//oldcode: GameObject.Find("BodyModel").GetComponent<IKHands>();
-		hands.setHands(objects[1].name);
+		hands = character.GetComponentInChildren<IKHands>();
+		hands.setHands();
 		this.transform.LookAt(center);
 	}
 	
@@ -71,16 +71,15 @@ public class WIHolder : NetworkBehaviour
 			//update item being shown if an index changes using syncvariables
 			if((itemIndex != oldItemIndex) || (weaponIndex != oldWeaponIndex) || (weaponShow != oldWeaponShow))
 			{
-				changeId++;
 				if(weaponShow)
 				{
 					showWeapon(weaponIndex);
-					hands.setHands(objects[weaponIndex].name);
+					hands.setHands();
 				}
 				else
 				{
 					showItem(itemIndex);
-					hands.setHands(objects[itemIndex + itemOffset].name);
+					hands.setHands();
 				}
 				this.transform.LookAt(center);
 			}
@@ -214,12 +213,12 @@ public class WIHolder : NetworkBehaviour
 			if(weaponShow)
 			{
 				showWeapon(weaponIndex);
-				hands.setHands(objects[weaponIndex].name);
+				hands.setHands();
 			}
 			else
 			{
 				showItem(itemIndex);
-				hands.setHands(objects[itemIndex + itemOffset].name);
+				hands.setHands();
 			}
 			this.transform.LookAt(center);
 		}

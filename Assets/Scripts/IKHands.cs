@@ -44,7 +44,7 @@ public class IKHands : MonoBehaviour
 			
 			//if the IK is not active, set the position and rotation of the hands back where they were
 			else
-			{          
+			{
 				animator.SetIKPositionWeight(AvatarIKGoal.RightHand,0);
 				animator.SetIKRotationWeight(AvatarIKGoal.RightHand,0);
 				animator.SetIKPositionWeight(AvatarIKGoal.LeftHand,0);
@@ -53,28 +53,20 @@ public class IKHands : MonoBehaviour
 		}
 	}
 	
-	public void setHands(string objName)
+	public void setHands()
 	{
-		if(this.gameObject.GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().gameObject.GetComponentInChildren<MainWeapon>().gameObject.GetComponentInChildren<RHandle>() != null)
+		if(GetComponentInParent<Character>().GetComponentInChildren<RHandle>() != null)
 		{
-			this.rightHandObj = GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<MainWeapon>().GetComponentInChildren<RHandle>().gameObject.transform;
-		}
-		else if(this.gameObject.GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<Item>().GetComponentInChildren<RHandle>() != null)
-		{
-			this.rightHandObj = GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<Item>().GetComponentInChildren<RHandle>().gameObject.transform;
+			this.rightHandObj = GetComponentInParent<Character>().GetComponentInChildren<RHandle>().gameObject.transform;
 		}
 		else
 		{
 			this.rightHandObj = null;
 		}
 		
-		if(this.gameObject.GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<MainWeapon>().GetComponentInChildren<LHandle>() != null)
+		if(this.gameObject.GetComponentInParent<Character>().GetComponentInChildren<LHandle>() != null)
 		{
-			this.leftHandObj = GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<MainWeapon>().GetComponentInChildren<LHandle>().gameObject.transform;
-		}
-		else if(this.gameObject.GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<Item>().GetComponentInChildren<LHandle>() != null)
-		{
-			this.leftHandObj = GetComponentInParent<Character>().GetComponentInChildren<WIHolder>().GetComponentInChildren<Item>().GetComponentInChildren<LHandle>().gameObject.transform;
+			this.leftHandObj = GetComponentInParent<Character>().GetComponentInChildren<LHandle>().gameObject.transform;
 		}
 		else
 		{
