@@ -5,7 +5,7 @@ using System.Collections;
 
 public class IKHands : MonoBehaviour
 {
-	protected Animator animator;
+	public Animator animator;
 	public bool ikActive = false;
 	public Transform rightHandObj = null;
 	public Transform leftHandObj = null;

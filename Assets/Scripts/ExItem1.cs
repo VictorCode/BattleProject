@@ -45,15 +45,6 @@ public class ExItem1 : ItemGun
 			}
 		}
 		
-		if(Input.GetMouseButton(1) && !this.reloading)
-		{
-			zoomIn();
-		}
-		else
-		{
-			zoomOut();
-		}
-		
 		if((this.getAmmunition()) == 0 && (this.getBulletSet() == 0))
 		{
 			this.usedUp = true;

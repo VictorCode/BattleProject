@@ -9,7 +9,6 @@ public class Character : NetworkBehaviour
 {
 	[SerializeField] private float healthMax;
 	[SerializeField] private float powerMax;
-	[SerializeField] private int itemMax;
 	[SerializeField] private int ePower;
 	[SerializeField] private int qPower;
 	[SerializeField] private int fPower;
@@ -17,6 +16,7 @@ public class Character : NetworkBehaviour
 	[SerializeField] private float healthRegenSpeed;
 	[SerializeField] private float powerRegenTime;
 	[SerializeField] private float powerRegenSpeed;
+	[SerializeField] private int itemMax;
 	[SerializeField] private AudioSource epowerSound;
 	[SerializeField] private AudioSource qpowerSound;
 	[SerializeField] private AudioSource fpowerSound;
@@ -28,14 +28,14 @@ public class Character : NetworkBehaviour
 	[SerializeField] private Canvas invHud;
 	public Inventory inventory;
 	
-	private float health;
-	private float power;
+	[SyncVar] public float health;
+	[SyncVar] public float power;
 	public CharacterMovement charMovement;
 	protected Animator anim;
-	private float timeSinceHit;
-	private float timeSincePow;
-	private bool hregSoundPlayed;
-	private bool pregSoundPlayed;
+	[SyncVar] public float timeSinceHit;
+	[SyncVar] public float timeSincePow;
+	[SyncVar] public bool hregSoundPlayed;
+	[SyncVar] public bool pregSoundPlayed;
 	private int hDangerThreshold;
 	private bool lhSoundPlaying;
 	private int walkingHash;
@@ -59,7 +59,7 @@ public class Character : NetworkBehaviour
 	{
 		if(!isLocalPlayer)
 		{
-			this.gameObject.tag = "enemy";//need to figure out
+			this.gameObject.tag = "enemy"; //need to figure out
 			inventory = new Inventory(itemMax);
 			return;
 		}
@@ -117,7 +117,7 @@ public class Character : NetworkBehaviour
 				if(!hregSoundPlayed)
 				{
 					healthRegenSound.Play();
-					hregSoundPlayed = true;	
+					hregSoundPlayed = true;
 				}
 				
 				if(health >= healthMax)
@@ -255,6 +255,7 @@ public class Character : NetworkBehaviour
 		}
 	}
 	
+	[Server]
 	public void hurt(int damage)
 	{
 		timeSinceHit = Time.timeSinceLevelLoad;
@@ -263,7 +264,20 @@ public class Character : NetworkBehaviour
 		
 		if(health <= 0)
 		{
-			die();
+			die(); //still have to figure out
+		}
+	}
+	
+	[Command]
+	public void CmdHurt(int damage)
+	{
+		timeSinceHit = Time.timeSinceLevelLoad;
+		health -= damage;
+		hregSoundPlayed = false;
+		
+		if(health <= 0)
+		{
+			die(); //still have to figure out
 		}
 	}
 	
@@ -272,13 +286,14 @@ public class Character : NetworkBehaviour
 		Debug.Log("Deattttthhhhh");	
 	}
 	
-	public void heal(float moreHealth)
+	[Command]
+	public void CmdHeal(float moreHealth)
 	{
 		float need = healthMax - health;
 		
 		if(need >= moreHealth)
 		{
-			health += moreHealth;	
+			health += moreHealth;
 		}
 		else
 		{
@@ -286,7 +301,8 @@ public class Character : NetworkBehaviour
 		}
 	}
 	
-	public void usePower(float usedPower)
+	[Command]
+	public void CmdUsePower(float usedPower)
 	{
 		if(power >= usedPower)
 		{
@@ -296,7 +312,8 @@ public class Character : NetworkBehaviour
 		}
 	}
 	
-	public void gainPower(float gainedPower)
+	[Command]
+	public void CmdGainPower(float gainedPower)
 	{
 		float needP = powerMax - power;
 		
@@ -393,13 +410,6 @@ public class Character : NetworkBehaviour
 		float pmold = this.powerMax;
 		this.powerMax = pm;
 		return pmold;
-	}
-	
-	public int setItemMax(int im)
-	{
-		int imold = this.itemMax;
-		this.itemMax = im;
-		return imold;
 	}
 	
 	public int setEPower(int ep)

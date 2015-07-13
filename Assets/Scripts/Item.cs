@@ -9,7 +9,6 @@ using UnityEngine.Networking;
 
 public class Item : NetworkBehaviour 
 {
-	[SerializeField] protected bool isZoomable;
 	[SerializeField] private float zoomDist;
 	[SerializeField] public Sprite symbol;
 	[SerializeField] public Vector3 posOffset;
@@ -20,9 +19,6 @@ public class Item : NetworkBehaviour
 	protected Animator anim;
 	protected Animator bodyAnim;
 	public Rigidbody rigBody;
-	protected bool zooming;
-	private Camera cam;
-	private float normalFOV;
 	private float t;
 	protected AudioSource audioSource;
 	public bool usedUp;
@@ -36,27 +32,16 @@ public class Item : NetworkBehaviour
 		anim = this.GetComponent<Animator>();
 		bodyAnim = character.GetComponentInChildren<IKHands>().gameObject.GetComponent<Animator>(); //use IK hands to get body-model-object
 		rigBody = GetComponent<Rigidbody>();
-		zooming = false;
 		audioSource = GetComponent<AudioSource>();
 		usedUp = false;
 		rigBody.isKinematic = true;
 		isThrown = false;
-		//emitterCheck = false;
 		this.id = (int) Time.time;
 		
 		if(!this.character.isLocalPlayer)
 		{
-			cam = null;
 			return;			//end here if not localPlayer
 		}
-		
-		if(zoomDist < 20)
-		{
-			zoomDist = 20;
-		}
-		
-		cam = Camera.main;
-		normalFOV = cam.fieldOfView;
 	}
 	
 	public void ItemUpdate()
@@ -66,24 +51,4 @@ public class Item : NetworkBehaviour
 			this.enabled = false;
 		}
 	}
-	
-	public void zoomIn()
-	{
-		if(this.isZoomable)
-		{
-			zooming = true;
-			t = Time.timeSinceLevelLoad - Time.time;
-			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,1000/zoomDist, (t + .01f) * Time.deltaTime * 1500);
-		}
-	}
-	
-	public void zoomOut()
-	{
-		if(this.isZoomable)
-		{
-			zooming = false;
-			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,normalFOV,(t + .01f) * Time.deltaTime * 1500);
-		}
-	}
-	
 }

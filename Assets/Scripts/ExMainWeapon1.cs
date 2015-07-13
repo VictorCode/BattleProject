@@ -8,7 +8,7 @@ public class ExMainWeapon1 : MainWeaponGun
 		this.MainWeaponGunStart();
 	}
 	
-	void Update () 
+	void Update ()
 	{
 		this.MainWeaponGunUpdate();
 		
@@ -20,15 +20,6 @@ public class ExMainWeapon1 : MainWeaponGun
 		if (Input.GetMouseButtonDown(0) && !this.reloading)
 		{
 			shoot();
-		}
-		
-		if(Input.GetMouseButton(1) && !this.reloading)
-		{
-			zoomIn();
-		}
-		else
-		{
-			zoomOut();
 		}
 	}
 }

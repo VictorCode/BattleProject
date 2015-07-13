@@ -3,27 +3,21 @@ using System.Collections;
 using UnityEngine.Networking;
 
 [RequireComponent(typeof (Animator))]
-[RequireComponent(typeof (Camera))]
 [RequireComponent(typeof (BoxCollider))]
 
 public class MainWeapon : NetworkBehaviour
 {
-	[SerializeField] protected bool isZoomable;
 	[SerializeField] private Texture2D crosshair;
 	[SerializeField] private Texture2D crosshairRed;
-	[SerializeField] private float zoomDist;
 	[SerializeField] public Vector3 posOffset;
 	[SerializeField] private int range;
 	
 	public Character character;
-	protected bool zooming;
 	protected Animator anim;
 	private bool enemyDetect;
 	private Ray mouseRay;
 	private RaycastHit hitInfo;
 	private float t;
-	private Camera cam;
-	private float normalFOV;
 	private float x;
 	private float y;
 	
@@ -37,16 +31,7 @@ public class MainWeapon : NetworkBehaviour
 		
 		if(!this.character.isLocalPlayer)
 		{
-			cam = null;
 			return;			//end here if not localPlayer
-		}
-		
-		cam = Camera.main;
-		normalFOV = cam.fieldOfView;
-		
-		if(zoomDist < 20)
-		{
-			zoomDist = 20;
 		}
 	}
 	
@@ -101,24 +86,5 @@ public class MainWeapon : NetworkBehaviour
 	public int getRange()
 	{
 		return this.range;
-	}
-	
-	public void zoomIn()
-	{
-		if(isZoomable)
-		{
-			t = Time.timeSinceLevelLoad - Time.time;
-			zooming = true;
-			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,1000/zoomDist, (t + .01f) * Time.deltaTime * 1500);
-		}
-	}
-	
-	public void zoomOut()
-	{
-		if(isZoomable)
-		{
-			zooming = false;
-			cam.fieldOfView = Mathf.Lerp(cam.fieldOfView,normalFOV,(t + .01f) * Time.deltaTime * 1500);
-		}
 	}
 }

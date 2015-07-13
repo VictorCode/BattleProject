@@ -33,15 +33,5 @@ public class ExMainWeapon2 : MainWeaponGun
 				//reload animation
 			}
 		}
-		
-		if(Input.GetMouseButton(1) && !this.reloading)
-		{
-			zoomIn();
-		}
-		else
-		{
-			zoomOut();
-		}
 	}
-	
 }

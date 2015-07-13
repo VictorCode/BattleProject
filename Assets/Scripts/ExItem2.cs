@@ -49,7 +49,7 @@ public class ExItem2 : Item
 	
 	void heal()
 	{
-		this.character.heal(health);
+		this.character.CmdHeal(health);
 		aSource.clip = healSound;
 		aSource.Play();
 		useNum--;

@@ -38,30 +38,31 @@ public class BlueChar : Character
 		
 		if (Input.GetKeyDown("h"))
 		{
-			this.hurt(10);
+			this.CmdHurt(10);
 		}
 		
 		if (Input.GetKeyDown("g"))
 		{
-			this.usePower(10);
+			this.CmdUsePower(10);
 		}
 	}
 	
+	//need to figure out animator sync
 	void epower()
 	{
 		anim.SetTrigger(epowHash);
-		usePower(20);
+		CmdUsePower(20);
 	}
 	
 	void qpower()
 	{
 		anim.SetTrigger(qpowHash);
-		usePower(25);
+		CmdUsePower(25);
 	}
 	
 	void fpower()
 	{
 		anim.SetTrigger(fpowHash);
-		usePower(10);
+		CmdUsePower(10);
 	}
 }
