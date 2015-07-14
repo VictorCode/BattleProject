@@ -1,9 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../Desktop/controller/Assets/PlayerNet.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CharacterMovement.cs">
     <Files>
-      <File FileName="../../Desktop/controller/Assets/PlayerNet.cs" Line="1" Column="1" />
-      <File FileName="../../Desktop/controller/Assets/RotationFix.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CharacterMovement.cs" Line="152" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

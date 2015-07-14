@@ -122,7 +122,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
                 StartCoroutine(m_JumpBob.DoBobCycle());
-                PlayLandingSound();
+                CmdPlayLandingSound();
                 m_MoveDir.y = 0f;
                 m_Jumping = false;
                 jumps = 0;
@@ -137,12 +137,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
             
         }
         
-        public void PlayLandingSound()
+        [Command]
+        public void CmdPlayLandingSound()
         {
+        	RpcPlayLandingSound();
             m_AudioSource.clip = m_LandSound;
             m_AudioSource.Play();
             m_NextStep = m_StepCycle + .5f;
         }
+        
+        [ClientRpc]
+        public void RpcPlayLandingSound()
+        {
+			PlayLandingSound();
+        }
+        
+		public void PlayLandingSound()
+		{
+			m_AudioSource.clip = m_LandSound;
+			m_AudioSource.Play();
+			m_NextStep = m_StepCycle + .5f;
+		}
 
         private void FixedUpdate()
         {

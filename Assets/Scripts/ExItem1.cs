@@ -8,7 +8,7 @@ public class ExItem1 : ItemGun
 	private float temprt;
 
 	// Use this for initialization
-	void Start () 
+	void Start ()
 	{
 		this.ItemGunStart();
 		
