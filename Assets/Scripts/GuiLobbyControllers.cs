@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.Networking.Types;
 using UnityEngine.Networking.Match;
 
 [Serializable]
@@ -166,6 +167,7 @@ public class OfflineCanvasControl : CanvasControl
 		Hide();
 
 		GuiLobbyManager.s_Singleton.StartMatchMaker();
+		GuiLobbyManager.s_Singleton.matchMaker.SetProgramAppID((AppID)GuiLobbyManager.pAppId);
 		GuiLobbyManager.s_Singleton.matchMakerCanvas.Show();
 	}
 }

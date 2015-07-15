@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CharacterMovement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GuiLobbyManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/CharacterMovement.cs" Line="152" Column="23" />
+      <File FileName="Assets/Scripts/GuiLobbyManager.cs" Line="26" Column="19" />
+      <File FileName="Assets/Scripts/CharacterMovement.cs" Line="146" Column="44" />
+      <File FileName="Assets/Scripts/GuiLobbyControllers.cs" Line="170" Column="89" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

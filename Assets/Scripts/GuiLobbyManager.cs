@@ -15,6 +15,7 @@ public class GuiLobbyManager : NetworkLobbyManager
 	public MatchMakerCanvasControl matchMakerCanvas;
 	public JoinMatchCanvasControl joinMatchCanvas;
 
+	public static int pAppId;
 	public string onlineStatus;
 	static public GuiLobbyManager s_Singleton;
 
@@ -22,6 +23,7 @@ public class GuiLobbyManager : NetworkLobbyManager
 	{
 		s_Singleton = this;
 		offlineCanvas.Show();
+		pAppId = 135601;
 	}
 
 	void OnLevelWasLoaded()
@@ -105,7 +107,6 @@ public class GuiLobbyManager : NetworkLobbyManager
 		onlineCanvas.Show(onlineStatus);
 
 		exitToLobbyCanvas.Hide();
-
 	}
 
 	public override void OnLobbyClientExit()
